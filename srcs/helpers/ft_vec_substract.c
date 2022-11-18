@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt.h                                               :+:      :+:    :+:   */
+/*   ft_vec_substract.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 15:19:18 by jraivio           #+#    #+#             */
-/*   Updated: 2022/11/18 16:49:51 by jraivio          ###   ########.fr       */
+/*   Created: 2022/11/18 16:59:54 by jraivio           #+#    #+#             */
+/*   Updated: 2022/11/18 17:00:22 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RT_H
-# define RT_H
-
-typedef struct s_vec
+t_vec	ft_vec_substract(t_vec first, t_vec second)
 {
-	double	x;
-	double	y;
-	double	z;
-}	t_struct;
 
-#endif
+}
