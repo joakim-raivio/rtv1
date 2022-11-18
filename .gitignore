@@ -1,0 +1,8 @@
+.prerequisites
+*.swp
+*.swo
+*.dSYM
+fractol
+*.o
+libft.a
+
