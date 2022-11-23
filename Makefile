@@ -1,6 +1,6 @@
 NAME := rtv1
 CC := gcc
-FILES := main
+FILES := main get_camera get_scene
 SRCSDIR := srcs
 SRCS := $(addprefix $(SRCSDIR)/, $(addsuffix .c, $(FILES)))
 OBJSDIR := objs
@@ -8,7 +8,8 @@ OBJS := $(addprefix $(OBJSDIR)/, $(addsuffix .o, $(FILES)))
 WWW := -Wall -Wextra -Werror -Wconversion
 MINILIB := -lmlx -framework OpenGL -framework AppKit
 INCS := -I includes -I libft/includes
-HDRS := libft/includes/libft.h includes/fractol.h includes/input_mappings.h
+HDRS := libft/includes/libft.h includes/rt.h includes/camera.h includes/object.h \
+		includes/scene.h
 LIBFT := $(INCS) -L libft/ -lft
 CFLAGS := $(WWW) $(MINILIB) $(LIBFT)
 OFLAGS := $(WWW) $(INCS) 

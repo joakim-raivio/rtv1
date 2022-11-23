@@ -1,17 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt.h                                               :+:      :+:    :+:   */
+/*   get_scene.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 15:19:18 by jraivio           #+#    #+#             */
-/*   Updated: 2022/11/23 15:13:02 by jraivio          ###   ########.fr       */
+/*   Created: 2022/11/23 15:00:57 by jraivio           #+#    #+#             */
+/*   Updated: 2022/11/23 15:13:44 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RT_H
-# define RT_H
+#include "scene.h"
 
+t_scene	*get_scene(void)
+{
+	static t_scene scene;
 
-#endif
+	return (&scene);
+}
