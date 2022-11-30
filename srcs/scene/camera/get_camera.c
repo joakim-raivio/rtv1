@@ -5,11 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/23 13:54:52 by jraivio           #+#    #+#             */
-/*   Updated: 2022/11/23 13:55:31 by jraivio          ###   ########.fr       */
+/*   Created: 2022/11/23 14:18:35 by jraivio           #+#    #+#             */
+/*   Updated: 2022/11/23 15:14:43 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rt.h"
+#include "camera.h"
 
+t_object	*get_camera(void)
+{
+	static t_object	camera;
 
+	return (&camera);
+}

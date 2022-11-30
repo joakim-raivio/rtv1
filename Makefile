@@ -1,20 +1,27 @@
 NAME := rtv1
 CC := gcc
-FILES := main get_camera get_scene
+FILES := main.c get_camera.c get_scene.c
 SRCSDIR := srcs
-SRCS := $(addprefix $(SRCSDIR)/, $(addsuffix .c, $(FILES)))
+SRCS = $(foreach SRC, $(FILES), $(shell find $(SRCSDIR) -name $(SRC)))
 OBJSDIR := objs
-OBJS := $(addprefix $(OBJSDIR)/, $(addsuffix .o, $(FILES)))
+OBJS := $(SRCS:$(SRCSDIR)%.c=$(OBJSDIR)%.o)
+OBJSDIRS = $(sort $(dir $(OBJS)))
 WWW := -Wall -Wextra -Werror -Wconversion
 MINILIB := -lmlx -framework OpenGL -framework AppKit
 INCS := -I includes -I libft/includes
-HDRS := libft/includes/libft.h includes/rt.h includes/camera.h includes/object.h \
-		includes/scene.h
+HDRFILES := rt.h camera.h object.h scene.h
+HDRS = $(foreach hdr, $(HDRFILES), $(shell find includes -name $(hdr)))
+HDRS += libft/includes/libft.h
 LIBFT := $(INCS) -L libft/ -lft
 CFLAGS := $(WWW) $(MINILIB) $(LIBFT)
 OFLAGS := $(WWW) $(INCS) 
 
 .PHONY: all libftcomp clean fclean re run debug drun
+
+test:
+	@echo $(HDRS)
+	@echo $(SRCS)
+	@echo $(OBJS)
 
 all: $(NAME)
 
@@ -23,9 +30,9 @@ $(NAME): .prerequisites libft/libft.a $(OBJS) Makefile
 	@echo "Compiling project binary\n"
 	@$(CC) $(OBJS) $(CFLAGS) -o $@
 
-.prerequisites: $(OBJSDIR) $(HDRS) $(SRCS)
+.prerequisites: $(OBJSDIRS) $(HDRS) $(SRCS)
 
-$(OBJSDIR):
+$(OBJSDIRS):
 	@mkdir -p $@
 
 $(HDRS):
