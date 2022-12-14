@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   interface.h                                        :+:      :+:    :+:   */
+/*   parse.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 16:40:21 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/14 16:56:35 by jraivio          ###   ########.fr       */
+/*   Created: 2022/12/14 16:59:44 by jraivio           #+#    #+#             */
+/*   Updated: 2022/12/14 17:11:20 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERFACE_H
-# define INTERFACE_H
-# define ON_KEY_DOWN 2
-# define ON_KEY_UP 3
-# define KEY_ESC 53
-
-void	init_interface(void);
-int		key_pressed(int key_code);
-int		key_released(int key_code);
-
+#ifndef PARSE_H
+# define PARSE_H
+#include "scene.h"
+#include "object.h"
+#include "camera.h"
+void	parse(void);
 #endif

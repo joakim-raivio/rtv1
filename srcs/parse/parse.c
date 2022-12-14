@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   interface.h                                        :+:      :+:    :+:   */
+/*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 16:40:21 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/14 16:56:35 by jraivio          ###   ########.fr       */
+/*   Created: 2022/12/14 16:59:11 by jraivio           #+#    #+#             */
+/*   Updated: 2022/12/14 17:11:04 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERFACE_H
-# define INTERFACE_H
-# define ON_KEY_DOWN 2
-# define ON_KEY_UP 3
-# define KEY_ESC 53
+#include "parse.h"
 
-void	init_interface(void);
-int		key_pressed(int key_code);
-int		key_released(int key_code);
-
-#endif
+void	parse(void)
+{
+	get_scene()->shapes[0].type = sphere;
+	get_scene()->shapes[0].scale = (t_vector){.x = 1, .y = 1, .z = 1};
+	get_scene()->lights[0].location.x = 10000;
+	get_scene()->lights[0].location.y = 10000;
+	get_camera()->location.x = 10;
+	get_camera()->rotation.x = -1;
+}

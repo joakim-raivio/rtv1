@@ -7,8 +7,9 @@ CAMERASRC := get_camera.c
 SCENESRC := get_scene.c
 RENDERSRC := get_frame.c add_pixel.c
 INTERFACESRC := init_interface.c keys.c
+PARSESRC := parse.c
 FILES := main.c init.c $(CAMERASRC) $(SCENESRC) $(VECTORSRC) $(RENDERSRC)       \
-	$(INTERFACESRC)
+	$(INTERFACESRC) $(PARSESRC)
 SRCSDIR := srcs
 SRCS = $(foreach SRC, $(FILES), $(shell find $(SRCSDIR) -name $(SRC)))
 OBJSDIR := objs
@@ -17,7 +18,7 @@ OBJSDIRS = $(sort $(dir $(OBJS)))
 WWW := -Wall -Wextra -Werror -Wconversion
 MINILIB := -lmlx -framework OpenGL -framework AppKit
 INCS := -I includes -I libft/includes
-HDRFILES := rt.h rt_mlx.h vector.h camera.h object.h scene.h
+HDRFILES := rt.h rt_mlx.h vector.h camera.h object.h scene.h interface.h
 HDRS = $(foreach HDR, $(HDRFILES), $(shell find includes -name $(HDR)))
 HDRS += libft/includes/libft.h
 LIBFT := $(INCS) -L libft/ -lft

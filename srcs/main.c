@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 15:19:42 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/14 16:22:09 by jraivio          ###   ########.fr       */
+/*   Updated: 2022/12/14 17:12:22 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "camera.h"
 #include "scene.h"
 #include "vector.h"
+#include "parse.h"
 #include <stdio.h>
 
 int	main(int argc, char **argv)
@@ -22,8 +23,10 @@ int	main(int argc, char **argv)
 	(void)argc;
 	(void)argv;
 	init();
-//	parse();
+	parse();
 //	render();
+	printf("Camera:\nLocation - X:%f Y:%f Z:%f\n", get_camera()->location.x,
+			get_camera()->location.y, get_camera()->location.z);
 	mlx_loop(get_frame()->mlx);
 	return (0);
 }
