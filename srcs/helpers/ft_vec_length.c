@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vec_add.c                                       :+:      :+:    :+:   */
+/*   ft_vec_length.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 16:48:43 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/02 16:48:35 by jraivio          ###   ########.fr       */
+/*   Created: 2022/12/02 17:22:34 by jraivio           #+#    #+#             */
+/*   Updated: 2022/12/02 17:27:37 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rt.h"
+#include <math.h>
 
-t_vec	ft_vec_add(t_vec first, t_vec second)
+double	ft_vec_length(t_vec vector)
 {
-	return (
-		(t_vec){.x = first.x + second.x,
-		.y = first.y + second.y,
-		.z = first.z + second.y});
+	return (sqrt(pow(vector.x, 2) + pow(vector.y, 2) + pow(vecor.z, 2)));
 }

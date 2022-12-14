@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 14:07:44 by jraivio           #+#    #+#             */
-/*   Updated: 2022/11/23 15:04:35 by jraivio          ###   ########.fr       */
+/*   Updated: 2022/12/02 16:21:49 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef enum e_object_type
 
 typedef struct	s_object
 {
+	t_transform		transform;
 	t_vector		location;
 	t_vector		rotation;
 	t_vector		scale;

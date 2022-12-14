@@ -1,6 +1,8 @@
 NAME := rtv1
 CC := gcc
-FILES := main.c get_camera.c get_scene.c
+CAMERASRC := get_camera.c
+SCENESRC := get_scene.c
+FILES := main.c $(CAMERASRC) $(SCENESRC)
 SRCSDIR := srcs
 SRCS = $(foreach SRC, $(FILES), $(shell find $(SRCSDIR) -name $(SRC)))
 OBJSDIR := objs
@@ -13,22 +15,17 @@ HDRFILES := rt.h camera.h object.h scene.h
 HDRS = $(foreach HDR, $(HDRFILES), $(shell find includes -name $(HDR)))
 HDRS += libft/includes/libft.h
 LIBFT := $(INCS) -L libft/ -lft
-CFLAGS := $(WWW) $(MINILIB) $(LIBFT)
+CFLAGS := $(WWW) $(MINILIB) $(LIBFT) -fms-extensions
 OFLAGS := $(WWW) $(INCS) 
 
 .PHONY: all libftcomp clean fclean re run debug drun
-
-test:
-	@echo $(HDRS)
-	@echo $(SRCS)
-	@echo $(OBJS)
 
 all: $(NAME)
 
 $(NAME): .prerequisites libft/libft.a $(OBJS) Makefile
 	@touch .prerequisites
 	@echo "Compiling project binary\n"
-	@$(CC) $(OBJS) $(CFLAGS) -o $@
+	$(CC) $(OBJS) $(CFLAGS) -o $@
 
 .prerequisites: $(OBJSDIRS) $(HDRS) $(SRCS)
 
@@ -42,7 +39,7 @@ $(SRCS):
 	touch $@
 
 $(OBJS): $(OBJSDIR)/%.o:$(SRCSDIR)/%.c $(HDRS) Makefile
-	@$(CC) $(OFLAGS) -c $< -o $@
+	$(CC) $(OFLAGS) -c $< -o $@
 
 libft/libft.a:
 	@make --no-print-directory -C ./libft
