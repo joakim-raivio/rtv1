@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vec_length.c                                    :+:      :+:    :+:   */
+/*   get_frame.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/02 17:22:34 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/02 17:27:37 by jraivio          ###   ########.fr       */
+/*   Created: 2022/12/14 16:18:44 by jraivio           #+#    #+#             */
+/*   Updated: 2022/12/14 16:19:41 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <math.h>
+#include "rt.h"
+#include "rt_mlx.h"
 
-double	ft_vec_length(t_vec vector)
+t_frame	*get_frame(void)
 {
-	return (sqrt(pow(vector.x, 2) + pow(vector.y, 2) + pow(vecor.z, 2)));
+	static t_frame	frame;
+
+	return (&frame);
 }

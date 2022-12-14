@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt.h                                               :+:      :+:    :+:   */
+/*   ft_vec_dot.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 15:19:18 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/14 16:14:39 by jraivio          ###   ########.fr       */
+/*   Created: 2022/12/02 17:30:18 by jraivio           #+#    #+#             */
+/*   Updated: 2022/12/14 15:24:49 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RT_H
-# define RT_H
-# define SCREEN_W 800
-# define SCREEN_H 600
-# define WINDOW_NAME "RT"
+#include "vector.h"
 
-#include "libft.h"
-
-void	init(void);
-#endif
+double	ft_vec_dot(t_vector first, t_vector second)
+{
+	return (first.x * second.x
+		+ first.y * second.y
+		+ first.z * second.z
+	);
+}

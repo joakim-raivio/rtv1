@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vec_multiply.c                                  :+:      :+:    :+:   */
+/*   rt_mlx.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 16:48:43 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/02 17:20:32 by jraivio          ###   ########.fr       */
+/*   Created: 2022/12/14 16:01:24 by jraivio           #+#    #+#             */
+/*   Updated: 2022/12/14 16:17:05 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rt.h"
+#ifndef RT_MLX_H
+# define RT_MLX_H
+#include <mlx.h>
 
-t_vec	ft_vec_multiply(t_vec vector, double multiplier)
+typedef struct s_img {
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}				t_img;
+
+typedef struct s_frame
 {
-	return (
-		(t_vec){.x = vector.x * multiplier,
-		.y = vector.y * multiplier,
-		.z = vector.z * multiplier});
-}
+	void	*mlx;
+	void	*window;
+}	t_frame;
+
+t_frame	*get_frame(void);
+
+
+#endif

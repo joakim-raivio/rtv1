@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vec_substract.c                                 :+:      :+:    :+:   */
+/*   ft_vec_multiply.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 16:59:54 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/02 16:47:58 by jraivio          ###   ########.fr       */
+/*   Created: 2022/11/18 16:48:43 by jraivio           #+#    #+#             */
+/*   Updated: 2022/12/14 15:17:21 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-t_vec	ft_vec_substract(t_vec first, t_vec second)
+#include "vector.h"
+
+t_vector	ft_vec_multiply(t_vector vector, double multiplier)
 {
-	return (
-		(t_vec){.x = first.x - second.x,
-		.y = first.y - second.y,
-		.z = first.z - second.z});
+	return ((t_vector){
+		.x = vector.x * multiplier,
+		.y = vector.y * multiplier,
+		.z = vector.z * multiplier
+	});
 }

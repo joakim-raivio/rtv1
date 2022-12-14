@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vec_add.c                                       :+:      :+:    :+:   */
+/*   ft_vec_substract.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 16:48:43 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/02 17:22:12 by jraivio          ###   ########.fr       */
+/*   Created: 2022/11/18 16:59:54 by jraivio           #+#    #+#             */
+/*   Updated: 2022/12/14 15:37:23 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rt.h"
+#include "vector.h"
 
-t_vec	ft_vec_normalize(t_vec vector)
+t_vector	ft_vec_substract(t_vector first, t_vector second)
 {
-	return (ft_vec_divide(vector, ft_vec_length(vector));
+	return ((t_vector){
+		.x = first.x - second.x,
+		.y = first.y - second.y,
+		.z = first.z - second.z
+	});
 }

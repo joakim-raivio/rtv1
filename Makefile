@@ -1,8 +1,14 @@
 NAME := rtv1
 CC := gcc
+VECTORSRC := ft_vec_add.c ft_vec_dot.c ft_vec_normalize.c ft_vec_cross.c        \
+	ft_vec_length.c ft_vec_reflect.c ft_vec_divide.c ft_vec_multiply.c          \
+	ft_vec_substract.c
 CAMERASRC := get_camera.c
 SCENESRC := get_scene.c
-FILES := main.c $(CAMERASRC) $(SCENESRC)
+RENDERSRC := get_frame.c add_pixel.c
+INTERFACESRC := init_interface.c keys.c
+FILES := main.c init.c $(CAMERASRC) $(SCENESRC) $(VECTORSRC) $(RENDERSRC)       \
+	$(INTERFACESRC)
 SRCSDIR := srcs
 SRCS = $(foreach SRC, $(FILES), $(shell find $(SRCSDIR) -name $(SRC)))
 OBJSDIR := objs
@@ -11,11 +17,11 @@ OBJSDIRS = $(sort $(dir $(OBJS)))
 WWW := -Wall -Wextra -Werror -Wconversion
 MINILIB := -lmlx -framework OpenGL -framework AppKit
 INCS := -I includes -I libft/includes
-HDRFILES := rt.h camera.h object.h scene.h
+HDRFILES := rt.h rt_mlx.h vector.h camera.h object.h scene.h
 HDRS = $(foreach HDR, $(HDRFILES), $(shell find includes -name $(HDR)))
 HDRS += libft/includes/libft.h
 LIBFT := $(INCS) -L libft/ -lft
-CFLAGS := $(WWW) $(MINILIB) $(LIBFT) -fms-extensions
+CFLAGS := $(WWW) $(MINILIB) $(LIBFT)
 OFLAGS := $(WWW) $(INCS) 
 
 .PHONY: all libftcomp clean fclean re run debug drun

@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vec_add.c                                       :+:      :+:    :+:   */
+/*   ft_vec_normalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 16:48:43 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/02 16:48:35 by jraivio          ###   ########.fr       */
+/*   Updated: 2022/12/14 15:20:03 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rt.h"
+#include "vector.h"
 
-t_vec	ft_vec_add(t_vec first, t_vec second)
+t_vector	ft_vec_normalize(t_vector vector)
 {
-	return (
-		(t_vec){.x = first.x + second.x,
-		.y = first.y + second.y,
-		.z = first.z + second.y});
+	return (ft_vec_divide(vector, ft_vec_length(vector)));
 }

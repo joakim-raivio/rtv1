@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt.h                                               :+:      :+:    :+:   */
+/*   keys.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 15:19:18 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/14 16:14:39 by jraivio          ###   ########.fr       */
+/*   Created: 2022/12/14 16:39:44 by jraivio           #+#    #+#             */
+/*   Updated: 2022/12/14 16:53:29 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RT_H
-# define RT_H
-# define SCREEN_W 800
-# define SCREEN_H 600
-# define WINDOW_NAME "RT"
+#include "interface.h"
+#include "stdlib.h"
 
-#include "libft.h"
+int	key_pressed(int key_code)
+{
+	if (key_code == KEY_ESC)
+		exit(0);
+	return(0);
+}
 
-void	init(void);
-#endif
+int	key_released(int key_code)
+{
+	(void)key_code;
+	return (0);
+}

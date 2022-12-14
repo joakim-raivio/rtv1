@@ -1,16 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vec_dot.c                                       :+:      :+:    :+:   */
+/*   interface.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/02 17:30:18 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/02 17:35:53 by jraivio          ###   ########.fr       */
+/*   Created: 2022/12/14 16:40:21 by jraivio           #+#    #+#             */
+/*   Updated: 2022/12/14 16:51:24 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-double	ft_vec_dot(t_vec first, t_vec second)
-{
-	return(first.x * second.x + first.y * second.y + first.z * second.z);
-}
+#ifndef INTERFACE_H
+# define INTERFACE_H
+# define ON_KEY_DOWN 2
+# define ON_KEY_UP 3
+# define KEY_ESC 53
+
+void	init_interface(void);
+int		key_pressed(int key_code);
+int		key_released(int key_code);
+
+#endif
