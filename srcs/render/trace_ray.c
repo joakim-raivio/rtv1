@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 20:04:19 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/15 22:06:52 by jraivio          ###   ########.fr       */
+/*   Updated: 2022/12/15 23:08:49 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,16 @@ unsigned int	trace_ray(t_ray ray)
 	int		i;
 
 	closest_hit = (t_hit){.collided_shape = 0,
-		.length = MAX_TRACE_LENGTH + 1};
+		.length = MAX_TRACE_LENGTH};
 	i = 0;
 	while (i < MAX_SHAPES)
 	{
-		current_hit = intersect_shape(ray, &(get_scene()->shapes[i]));
+		if (get_scene()->shapes[i].type == null)
+		{
+			i++;
+			continue;
+		}
+		current_hit = intersect_shape(ray, get_scene()->shapes[i]);
 		if (current_hit.length < closest_hit.length)
 		{
 			closest_hit = current_hit;
