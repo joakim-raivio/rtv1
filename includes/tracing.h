@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   shape.h                                            :+:      :+:    :+:   */
+/*   tracing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/23 14:37:11 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/15 22:01:39 by jraivio          ###   ########.fr       */
+/*   Created: 2022/12/15 20:04:39 by jraivio           #+#    #+#             */
+/*   Updated: 2022/12/15 21:59:51 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHAPE_H
-# define SHAPE_H
-# include "tracing.h"
+#ifndef TRACING_H
+# define TRACING_H
+# include "vector.h"
+# include "options.h"
+# include "object.h"
 
-/*typedef struct	s_shape
+typedef struct s_hit
 {
-	t_vector
-}*/
+	t_vector	location;
+	t_vector	direction;
+	double		length;
+	t_object	*collided_shape;
+}	t_hit;
 
-typedef struct	s_intersect_result
+typedef struct s_ray
 {
-	double	first;
-	double	second;
-}	t_intersect_result;
+	t_vector	origin;
+	t_vector	direction;
+	double		min_length;
+	double		max_length;
+}	t_ray;
 
-t_hit				intersect_shape(t_ray ray, t_object *shape);
-t_intersect_result	intersect_sphere(t_ray ray, t_object shape);
+unsigned int	trace_ray();
 
 #endif

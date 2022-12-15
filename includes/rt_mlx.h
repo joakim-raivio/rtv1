@@ -6,16 +6,14 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:01:24 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/15 20:00:28 by jraivio          ###   ########.fr       */
+/*   Updated: 2022/12/15 21:56:06 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RT_MLX_H
 # define RT_MLX_H
 # include <mlx.h>
-# define SCREEN_W 800
-# define SCREEN_H 600
-# define WINDOW_NAME "RT"
+# include "options.h"
 
 typedef struct s_image
 {

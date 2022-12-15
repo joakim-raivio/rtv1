@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   shape.h                                            :+:      :+:    :+:   */
+/*   options.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/23 14:37:11 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/15 22:01:39 by jraivio          ###   ########.fr       */
+/*   Created: 2022/12/15 21:54:16 by jraivio           #+#    #+#             */
+/*   Updated: 2022/12/15 21:56:11 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHAPE_H
-# define SHAPE_H
-# include "tracing.h"
-
-/*typedef struct	s_shape
-{
-	t_vector
-}*/
-
-typedef struct	s_intersect_result
-{
-	double	first;
-	double	second;
-}	t_intersect_result;
-
-t_hit				intersect_shape(t_ray ray, t_object *shape);
-t_intersect_result	intersect_sphere(t_ray ray, t_object shape);
+#ifndef OPTIONS_H
+# define OPTIONS_H
+# define MIN_TRACE_LENGTH 1
+# define MAX_TRACE_LENGTH 100000000
+# define BACKGROUND_COLOR 0x00000000
+# define MAX_LIGHTS 4
+# define MAX_SHAPES 10
+# define SCREEN_W 800
+# define SCREEN_H 600
+# define WINDOW_NAME "RT"
 
 #endif

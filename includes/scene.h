@@ -6,15 +6,14 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 14:43:03 by jraivio           #+#    #+#             */
-/*   Updated: 2022/11/23 15:13:10 by jraivio          ###   ########.fr       */
+/*   Updated: 2022/12/15 21:55:33 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCENE_H
 # define SCENE_H
-# define MAX_LIGHTS 4
-# define MAX_SHAPES 10
-#include "object.h"
+# include "object.h"
+# include "options.h"
 
 typedef struct s_scene
 {

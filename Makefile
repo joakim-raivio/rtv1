@@ -6,11 +6,13 @@ VECTORSRC := vec_add.c vec_dot.c vec_normalize.c vec_cross.c vec_length.c       
 	rot_to_vec.c rad_to_deg.c deg_to_rad.c
 CAMERASRC := get_camera.c
 SCENESRC := get_scene.c
-RENDERSRC := get_image.c add_pixel.c screenloop.c render.c
+RENDERSRC := get_image.c add_pixel.c screenloop.c render.c canvas_to_viewport.c \
+	trace_ray.c
+SHAPESRC := intersect_shape.c intersect_sphere.c
 INTERFACESRC := init_interface.c keys.c
 PARSESRC := parse.c
 FILES := $(CORESRC) $(CAMERASRC) $(SCENESRC) $(VECTORSRC) $(RENDERSRC)          \
-	$(INTERFACESRC) $(PARSESRC)
+	$(INTERFACESRC) $(PARSESRC) $(SHAPESRC)
 SRCSDIR := srcs
 SRCS = $(foreach SRC, $(FILES), $(shell find $(SRCSDIR) -name $(SRC)))
 OBJSDIR := objs
