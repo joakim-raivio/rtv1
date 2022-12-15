@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vec_multiply.c                                  :+:      :+:    :+:   */
+/*   vec_dot.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 16:48:43 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/14 15:17:21 by jraivio          ###   ########.fr       */
+/*   Created: 2022/12/02 17:30:18 by jraivio           #+#    #+#             */
+/*   Updated: 2022/12/15 13:30:59 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 
-t_vector	ft_vec_multiply(t_vector vector, double multiplier)
+double	vec_dot(t_vector first, t_vector second)
 {
-	return ((t_vector){
-		.x = vector.x * multiplier,
-		.y = vector.y * multiplier,
-		.z = vector.z * multiplier
-	});
+	return (first.x * second.x
+		+ first.y * second.y
+		+ first.z * second.z
+	);
 }

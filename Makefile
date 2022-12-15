@@ -1,8 +1,8 @@
 NAME := rtv1
 CC := gcc
-VECTORSRC := ft_vec_add.c ft_vec_dot.c ft_vec_normalize.c ft_vec_cross.c        \
-	ft_vec_length.c ft_vec_reflect.c ft_vec_divide.c ft_vec_multiply.c          \
-	ft_vec_substract.c
+VECTORSRC := vec_add.c vec_dot.c vec_normalize.c vec_cross.c vec_length.c       \
+	vec_reflect.c vec_divide.c vec_multiply.c vec_substract.c vec_to_rot.c      \
+	rot_to_vec.c rad_to_deg.c deg_to_rad.c
 CAMERASRC := get_camera.c
 SCENESRC := get_scene.c
 RENDERSRC := get_frame.c add_pixel.c

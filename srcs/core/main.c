@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 15:19:42 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/14 17:12:22 by jraivio          ###   ########.fr       */
+/*   Updated: 2022/12/15 15:25:55 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,21 @@
 #include "parse.h"
 #include <stdio.h>
 
+void	print_vector(t_vector vector)
+{
+	printf("X: %f - Y: %f - Z: %f\n", vector.x, vector.y, vector.z);
+}
+
+void	print_rotation(t_rotation rotation)
+{
+	printf("Radians:\n\t Yaw: %f - Pitch: %f - Roll: %f\n",
+		   	rotation.yaw, rotation.pitch, rotation.roll);
+	printf("Degrees:\n\t Yaw: %f - Pitch: %f - Roll: %f\n",
+			rad_to_deg(rotation.yaw),
+			rad_to_deg(rotation.pitch),
+			rad_to_deg(rotation.roll));
+}
+
 int	main(int argc, char **argv)
 {
 	(void)argc;
@@ -25,9 +40,12 @@ int	main(int argc, char **argv)
 	init();
 	parse();
 //	render();
-	printf("Camera:\nLocation - X:%f Y:%f Z:%f\n", get_camera()->location.x,
-			get_camera()->location.y, get_camera()->location.z);
-	mlx_loop(get_frame()->mlx);
+//	printf("Camera:\nLocation - X:%f Y:%f Z:%f\n", get_camera()->location.x,
+//			get_camera()->location.y, get_camera()->location.z);
+//	mlx_loop(get_frame()->mlx);
+	print_rotation(vec_to_rot(get_camera()->rotation));
+	print_vector(get_camera()->rotation);
+	print_vector(rot_to_vec(vec_to_rot(get_camera()->rotation)));
 	return (0);
 }
 

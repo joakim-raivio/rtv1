@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vec_length.c                                    :+:      :+:    :+:   */
+/*   vec_divide.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/02 17:22:34 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/14 15:16:57 by jraivio          ###   ########.fr       */
+/*   Created: 2022/11/18 16:48:43 by jraivio           #+#    #+#             */
+/*   Updated: 2022/12/15 13:30:48 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
-#include <math.h>
 
-double	ft_vec_length(t_vector vector)
+t_vector	vec_divide(t_vector vector, double divider)
 {
-	return (sqrt(
-			pow(vector.x, 2)
-			+ pow(vector.y, 2)
-			+ pow(vector.z, 2)));
+	return ((t_vector){
+		.x = vector.x / divider,
+		.y = vector.y / divider,
+		.z = vector.z / divider
+	});
 }
