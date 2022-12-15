@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 15:19:42 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/15 15:25:55 by jraivio          ###   ########.fr       */
+/*   Updated: 2022/12/15 20:01:01 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@ int	main(int argc, char **argv)
 	(void)argv;
 	init();
 	parse();
-//	render();
+	render();
 //	printf("Camera:\nLocation - X:%f Y:%f Z:%f\n", get_camera()->location.x,
 //			get_camera()->location.y, get_camera()->location.z);
-//	mlx_loop(get_frame()->mlx);
 	print_rotation(vec_to_rot(get_camera()->rotation));
 	print_vector(get_camera()->rotation);
 	print_vector(rot_to_vec(vec_to_rot(get_camera()->rotation)));
+	mlx_loop(get_frame()->mlx);
 	return (0);
 }
 

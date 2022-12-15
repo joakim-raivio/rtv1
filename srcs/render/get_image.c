@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt.h                                               :+:      :+:    :+:   */
+/*   get_image.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 15:19:18 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/15 20:01:41 by jraivio          ###   ########.fr       */
+/*   Created: 2022/12/15 19:36:01 by jraivio           #+#    #+#             */
+/*   Updated: 2022/12/15 19:49:42 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RT_H
-# define RT_H
-#include "libft.h"
+#include "rt_mlx.h"
 
-void	init(void);
-void	render(void);
-#endif
+t_image	*get_image(void)
+{
+	static t_image	image;
+
+	return (&image);
+}

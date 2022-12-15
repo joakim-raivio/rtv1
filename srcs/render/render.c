@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rt.h                                               :+:      :+:    :+:   */
+/*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 15:19:18 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/15 20:01:41 by jraivio          ###   ########.fr       */
+/*   Created: 2022/12/15 19:57:56 by jraivio           #+#    #+#             */
+/*   Updated: 2022/12/15 20:02:49 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RT_H
-# define RT_H
-#include "libft.h"
+#include "render.h"
 
-void	init(void);
-void	render(void);
-#endif
+void	render(void)
+{
+	screenloop();
+	mlx_put_image_to_window(get_frame()->mlx, get_frame()->window, 
+			get_image()->image, 0, 0);
+}

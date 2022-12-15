@@ -1,14 +1,15 @@
 NAME := rtv1
 CC := gcc
+CORESRC := main.c init.c get_frame.c
 VECTORSRC := vec_add.c vec_dot.c vec_normalize.c vec_cross.c vec_length.c       \
 	vec_reflect.c vec_divide.c vec_multiply.c vec_substract.c vec_to_rot.c      \
 	rot_to_vec.c rad_to_deg.c deg_to_rad.c
 CAMERASRC := get_camera.c
 SCENESRC := get_scene.c
-RENDERSRC := get_frame.c add_pixel.c
+RENDERSRC := get_image.c add_pixel.c screenloop.c render.c
 INTERFACESRC := init_interface.c keys.c
 PARSESRC := parse.c
-FILES := main.c init.c $(CAMERASRC) $(SCENESRC) $(VECTORSRC) $(RENDERSRC)       \
+FILES := $(CORESRC) $(CAMERASRC) $(SCENESRC) $(VECTORSRC) $(RENDERSRC)          \
 	$(INTERFACESRC) $(PARSESRC)
 SRCSDIR := srcs
 SRCS = $(foreach SRC, $(FILES), $(shell find $(SRCSDIR) -name $(SRC)))
