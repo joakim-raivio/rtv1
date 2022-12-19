@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 20:57:10 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/15 23:25:58 by jraivio          ###   ########.fr       */
+/*   Updated: 2022/12/19 17:44:58 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_intersect_result	intersect_sphere(t_ray ray, t_object sphere)
 	a = 1;
 	b = 2 * vec_dot(sphere_location_delta, ray.direction);
 	c = vec_length(sphere_location_delta)
-	   	- sphere.scale.x * sphere.scale.x;
+	   	- (sphere.scale.x * sphere.scale.x);
 	discriminant = b * b - 4 * a * c;
 	if (discriminant < 0)
 		return((t_intersect_result){
