@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 20:57:10 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/19 17:44:58 by jraivio          ###   ########.fr       */
+/*   Updated: 2022/12/21 17:01:31 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,3 +41,22 @@ t_intersect_result	intersect_sphere(t_ray ray, t_object sphere)
 			.second = (b - sqrt(discriminant)) / (2 * a)
 		});
 }
+
+/*
+ * IntersectRaySphere(O, D, sphere) {
+    r = sphere.radius
+    CO = O - sphere.center
+
+    a = dot(D, D)
+    b = 2*dot(CO, D)
+    c = dot(CO, CO) - r*r
+
+    discriminant = b*b - 4*a*c
+    if discriminant < 0 {
+        return inf, inf
+    }
+
+    t1 = (-b + sqrt(discriminant)) / (2*a)
+    t2 = (-b - sqrt(discriminant)) / (2*a)
+    return t1, t2
+*/

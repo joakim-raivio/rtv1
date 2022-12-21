@@ -6,12 +6,13 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 14:52:25 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/19 17:37:16 by jraivio          ###   ########.fr       */
+/*   Updated: 2022/12/21 16:51:25 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 #include <math.h>
+#include <stdio.h>
 
 /*
 t_vector	rotate_yaw(t_vector *vector, double angle)
@@ -33,6 +34,11 @@ t_vector	vec_rotate(t_vector vector, t_rotation rotation)
 	vector_rotation = vec_to_rot(vector);
 	vector_rotation.yaw += rotation.yaw;
 	vector_rotation.pitch += rotation.pitch;
+	if (vector_rotation.yaw == 0)
+	{
+		printf("Input pitch: %f\nResult pitch: %f\n", rad_to_deg(rotation.pitch), rad_to_deg(vector_rotation.pitch));
+		printf("Resulting vector - X: %f Y: %f Z: %f\n", rot_to_vec(vector_rotation).x, rot_to_vec(vector_rotation).y, rot_to_vec(vector_rotation).z);
+	}
 	return (rot_to_vec(vector_rotation));
 }
 
