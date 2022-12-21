@@ -3,7 +3,7 @@ CC := gcc
 CORESRC := main.c init.c get_frame.c
 VECTORSRC := vec_add.c vec_dot.c vec_normalize.c vec_cross.c vec_length.c       \
 	vec_reflect.c vec_divide.c vec_multiply.c vec_substract.c vec_to_rot.c      \
-	rot_to_vec.c rad_to_deg.c deg_to_rad.c
+	rot_to_vec.c rad_to_deg.c deg_to_rad.c vec_rotate.c
 CAMERASRC := get_camera.c
 SCENESRC := get_scene.c
 RENDERSRC := get_image.c add_pixel.c screenloop.c render.c canvas_to_viewport.c \

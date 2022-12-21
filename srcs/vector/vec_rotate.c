@@ -6,13 +6,14 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 14:52:25 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/19 17:27:46 by jraivio          ###   ########.fr       */
+/*   Updated: 2022/12/19 17:37:16 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 #include <math.h>
 
+/*
 t_vector	rotate_yaw(t_vector *vector, double angle)
 {
 	transform local then this and back to world.
@@ -23,23 +24,17 @@ t_vector	rotate_yaw(t_vector *vector, double angle)
 			.z = z,
 			});
 }
+*/
 
 t_vector	vec_rotate(t_vector vector, t_rotation rotation)
 {
-	t_vector	local;
+	t_rotation	vector_rotation;
 
-	local = vector_world_to_local(vector);
-	rotate_yaw(&local, rotation.yaw);
-	rotate_pitch(&local, rotation.pitch);
-	rotate_roll(&local, rotation.roll);
-	return (vec_local_to_world());
+	vector_rotation = vec_to_rot(vector);
+	vector_rotation.yaw += rotation.yaw;
+	vector_rotation.pitch += rotation.pitch;
+	return (rot_to_vec(vector_rotation));
 }
-
-t_vector	vec_rotate_world(t_vector vector, t_rotation rotation)
-{
-	
-}
-
 
 /*
  *  

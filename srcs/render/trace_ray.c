@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 20:04:19 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/15 23:08:49 by jraivio          ###   ########.fr       */
+/*   Updated: 2022/12/19 17:50:56 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 #include "scene.h"
 #include "shape.h"
 
+#include <stdio.h>
+
 unsigned int	trace_ray(t_ray ray)
 {
 	t_hit	closest_hit;
 	t_hit	current_hit;
 	int		i;
 
+	printf("Ray direction -  X: %f, Y: %f, Z: %f\n", ray.direction.x, ray.direction.y, ray.direction.z);
 	closest_hit = (t_hit){.collided_shape = 0,
 		.length = MAX_TRACE_LENGTH};
 	i = 0;
