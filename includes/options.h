@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 21:54:16 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/15 23:37:30 by jraivio          ###   ########.fr       */
+/*   Updated: 2022/12/22 20:45:41 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # define MAX_SHAPES 10
 # define SCREEN_W 600
 # define SCREEN_H 600
-# define VERTICAL_FOV 60
-# define HORIZONTAL_FOV 90
+# define VERTICAL_FOV 45
+# define HORIZONTAL_FOV 45
 # define WINDOW_NAME "RT"
 
 #endif

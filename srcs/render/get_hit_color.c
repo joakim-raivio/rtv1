@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   canvas_to_viewport.c                               :+:      :+:    :+:   */
+/*   get_hit_color.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 21:45:18 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/23 00:35:20 by jraivio          ###   ########.fr       */
+/*   Created: 2022/12/22 19:57:13 by jraivio           #+#    #+#             */
+/*   Updated: 2022/12/22 20:26:58 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector.h"
+#include "tracing.h"
+#include "color.h"
+#include "shape.h"
 #include "options.h"
-#include "camera.h"
 
-t_vector	canvas_to_viewport(int x, int y)
+unsigned int	get_hit_color(t_hit hit)
 {
-	return (vec_rotate(get_camera()->rotation,
-				(t_rotation){
-				.yaw = deg_to_rad(HORIZONTAL_FOV * (((double)x / SCREEN_W) - 0.5)),
-				.pitch = deg_to_rad(VERTICAL_FOV * (((double)y / SCREEN_H) - 0.5)),
-				.roll = 0
-				}));
+	t_color	color;
+
+	if (hit.collided_shape == 0)
+		return (BACKGROUND_COLOR);
+	color = ((t_shape *)(hit.collided_shape))->color;
+	return (
+			(unsigned int)(color.brightness * color.red * 255) << 16 | \
+			(unsigned int)(color.brightness * color.green * 255) << 8 | \
+			(unsigned int)(color.brightness * color.blue * 255)
+			);
 }

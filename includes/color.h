@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   object.h                                           :+:      :+:    :+:   */
+/*   color.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/23 14:07:44 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/22 19:50:46 by jraivio          ###   ########.fr       */
+/*   Created: 2022/12/22 19:51:10 by jraivio           #+#    #+#             */
+/*   Updated: 2022/12/22 20:20:55 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef OBJECT_H
-# define OBJECT_H
-#include "vector.h"
+#ifndef COLOR_H
+# define COLOR_H
 
-typedef enum e_object_type
+typedef struct s_color
 {
-	null,
-	camera,
-	light,
-	plane,
-	sphere,
-	cylinder,
-	cone
-}	t_object_type;
-
-typedef struct	s_object
-{
-	t_vector		location;
-	t_vector		rotation;
-	t_vector		scale;
-	t_object_type	type;
-}	t_object;
-
-t_object	get_empty_object(void);
+	double	red;
+	double	green;
+	double	blue;
+	double	brightness;
+	double	alpha;
+}	t_color;
 
 #endif
