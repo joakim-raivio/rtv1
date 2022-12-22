@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 20:04:39 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/15 21:59:51 by jraivio          ###   ########.fr       */
+/*   Updated: 2022/12/22 20:43:19 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_ray
 	double		max_length;
 }	t_ray;
 
-unsigned int	trace_ray();
+t_hit			trace_ray();
+unsigned int	get_hit_color(t_hit hit);
 
 #endif

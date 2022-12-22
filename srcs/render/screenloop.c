@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 19:53:01 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/15 22:14:01 by jraivio          ###   ########.fr       */
+/*   Updated: 2022/12/22 19:56:27 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ void	screenloop(void)
 		while (x < SCREEN_W)
 		{
 			add_pixel(image, x, y, 
-					trace_ray((t_ray){
+					get_hit_color(trace_ray((t_ray){
 						.origin = camera_location,
 						.direction = canvas_to_viewport(x, y),
 						.min_length = MIN_TRACE_LENGTH,
 						.max_length = MAX_TRACE_LENGTH}
-					));
+					)));
 			x++;
 		}
 		x = 0;

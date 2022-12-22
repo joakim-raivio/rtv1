@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 14:05:39 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/19 17:36:34 by jraivio          ###   ########.fr       */
+/*   Updated: 2022/12/22 18:58:31 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ t_vector	rot_to_vec(t_rotation rotation);
 double		rad_to_deg(double radians);
 double		deg_to_rad(double degrees);
 t_vector	vec_rotate(t_vector, t_rotation);
+t_vector	vec_square(t_vector vector);
 
 #endif
