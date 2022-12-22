@@ -19,8 +19,8 @@ OBJSDIR := objs
 OBJS := $(SRCS:$(SRCSDIR)%.c=$(OBJSDIR)%.o)
 OBJSDIRS = $(sort $(dir $(OBJS)))
 WWW := -Wall -Wextra -Werror -Wconversion
-MINILIB := -lmlx -framework OpenGL -framework AppKit
-INCS := -I includes -I libft/includes
+MINILIB := -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+INCS := -I includes -I libft/includes -I/usr/include -Imlx_linux
 HDRFILES := rt.h rt_mlx.h vector.h camera.h object.h scene.h interface.h parse.h
 HDRS = $(foreach HDR, $(HDRFILES), $(shell find includes -name $(HDR)))
 HDRS += libft/includes/libft.h
