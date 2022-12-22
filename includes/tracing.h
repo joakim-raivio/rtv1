@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 20:04:39 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/22 20:43:19 by jraivio          ###   ########.fr       */
+/*   Updated: 2022/12/23 01:02:54 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef struct s_hit
 {
 	t_vector	location;
 	t_vector	direction;
+	t_vector	normal;
 	double		length;
 	t_object	*collided_shape;
 }	t_hit;
