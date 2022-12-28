@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   canvas_to_viewport.c                               :+:      :+:    :+:   */
+/*   quat_to_vec.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 21:45:18 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/28 19:12:01 by jraivio          ###   ########.fr       */
+/*   Created: 2022/12/28 17:03:14 by jraivio           #+#    #+#             */
+/*   Updated: 2022/12/28 18:38:39 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "quaternion.h"
 #include "vector.h"
-#include "options.h"
-#include "camera.h"
 
-t_vector	canvas_to_viewport(int x, int y)
+t_vector	quat_to_vec(t_quaternion quaternion)
 {
-	return (vec_rotate(get_camera()->rotation,
-				(t_rotation){
-				.yaw = deg_to_rad(HORIZONTAL_FOV * (((double)x / SCREEN_W) - 0.5)),
-				.pitch = deg_to_rad(VERTICAL_FOV * (((double)y / SCREEN_H) - 0.5)),
-				.roll = 0
-				}));
+	return(vec_normalize((t_vector){
+		.x = quaternion.x,
+		.y = quaternion.y,
+		.z = quaternion.z
+	}));
 }

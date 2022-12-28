@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 14:52:25 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/22 19:45:56 by jraivio          ###   ########.fr       */
+/*   Updated: 2022/12/28 18:29:57 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,15 @@ t_vector	rotate_yaw(t_vector *vector, double angle)
 }
 */
 
+#include "vector.h"
+#include "quaternion.h"
+
+t_vector	vec_rotate(t_vector vector, t_rotation rotation)
+{
+	return(quat_to_vec(
+		quat_rotate(vec_to_quat(vector), rot_to_quat(rotation))));
+}
+/*
 t_vector	vec_rotate(t_vector vector, t_rotation rotation)
 {
 	t_rotation	vector_rotation;
@@ -34,15 +43,18 @@ t_vector	vec_rotate(t_vector vector, t_rotation rotation)
 	vector_rotation = vec_to_rot(vector);
 	vector_rotation.yaw += rotation.yaw;
 	vector_rotation.pitch += rotation.pitch;
-/*
-	if (vector_rotation.yaw == 0)
+
+	if (rotation.pitch == 0)
 	{
-		printf("Input pitch: %f\nResult pitch: %f\n", rad_to_deg(rotation.pitch), rad_to_deg(vector_rotation.pitch));
+		printf("Input yaw: %f -> Result yaw: %f\n", rad_to_deg(rotation.yaw), rad_to_deg(vector_rotation.yaw));
+		printf("Input pitch: %f -> Result pitch: %f\n", rad_to_deg(rotation.pitch), rad_to_deg(vector_rotation.pitch));
+		printf("Input vector - X: %f Y: %f Z: %f\n", vector.x, vector.y, vector.z);
 		printf("Resulting vector - X: %f Y: %f Z: %f\n", rot_to_vec(vector_rotation).x, rot_to_vec(vector_rotation).y, rot_to_vec(vector_rotation).z);
 	}
-*/
+
 	return (rot_to_vec(vector_rotation));
 }
+*/
 
 /*
  *  
