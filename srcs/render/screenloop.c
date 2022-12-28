@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 19:53:01 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/22 19:56:27 by jraivio          ###   ########.fr       */
+/*   Updated: 2022/12/26 18:30:50 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	screenloop(void)
 						.max_length = MAX_TRACE_LENGTH}
 					)));
 			x++;
+//			mlx_put_image_to_window(get_frame()->mlx, get_frame()->window, 
+//					get_image()->image, 0, 0);
 		}
 		x = 0;
 		y++;

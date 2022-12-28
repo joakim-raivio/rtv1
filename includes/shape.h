@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 14:37:11 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/22 20:40:42 by jraivio          ###   ########.fr       */
+/*   Updated: 2022/12/28 13:49:49 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct	s_intersect_result
 }	t_intersect_result;
 
 t_hit				intersect_shape(t_ray ray, t_shape *shape);
-t_intersect_result	intersect_sphere(t_ray ray, t_shape shape);
+t_intersect_result	intersect_sphere(t_ray ray, t_shape sphere);
+t_vector			get_normal_sphere(t_shape sphere, t_vector location);
 
 #endif

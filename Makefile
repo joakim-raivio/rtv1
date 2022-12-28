@@ -8,7 +8,7 @@ CAMERASRC := get_camera.c
 SCENESRC := get_scene.c
 RENDERSRC := get_image.c add_pixel.c screenloop.c render.c canvas_to_viewport.c \
 	trace_ray.c get_hit_color.c get_luminosity.c
-SHAPESRC := intersect_shape.c intersect_sphere.c
+SHAPESRC := intersect_shape.c intersect_sphere.c get_normal_sphere.c
 INTERFACESRC := init_interface.c keys.c
 PARSESRC := parse.c
 FILES := $(CORESRC) $(CAMERASRC) $(SCENESRC) $(VECTORSRC) $(RENDERSRC)          \

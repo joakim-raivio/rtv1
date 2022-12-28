@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   options.h                                          :+:      :+:    :+:   */
+/*   get_normal_sphere.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 21:54:16 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/23 14:23:25 by jraivio          ###   ########.fr       */
+/*   Created: 2022/12/28 13:44:54 by jraivio           #+#    #+#             */
+/*   Updated: 2022/12/28 13:48:29 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef OPTIONS_H
-# define OPTIONS_H
-# define MIN_TRACE_LENGTH 1
-# define MAX_TRACE_LENGTH 100000000
-# define BACKGROUND_COLOR 0x0008084F
-# define MAX_LIGHTS 4
-# define MAX_SHAPES 10
-# define SCREEN_W 600
-# define SCREEN_H 600
-# define VERTICAL_FOV 90
-# define HORIZONTAL_FOV 90
-# define WINDOW_NAME "RT"
-# define BACKGROUND_ILLUMINATION 0.1
+#include "shape.h"
+#include "vector.h"
+#include "tracing.h"
 
-#endif
+t_vector	get_normal_sphere(t_shape sphere, t_vector location)
+{
+	return(vec_normalize(vec_substract(sphere.object.location, location)));
+}
