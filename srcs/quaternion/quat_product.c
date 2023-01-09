@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 16:25:35 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/28 20:51:37 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/09 16:11:25 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 t_quaternion	quat_product(t_quaternion r, t_quaternion s)
 {
-	print_quaternion(r);
-	print_quaternion(s);
+//	print_quaternion(r);
+//	print_quaternion(s);
 
 	return ((t_quaternion){
 		.w = r.w * s.w - r.y * s.y - r.x * s.x - r.z * s.z,

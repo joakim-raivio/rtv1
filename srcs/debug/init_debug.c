@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   interface.h                                        :+:      :+:    :+:   */
+/*   init_debug.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 16:40:21 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/09 16:04:16 by jraivio          ###   ########.fr       */
+/*   Created: 2023/01/09 16:02:30 by jraivio           #+#    #+#             */
+/*   Updated: 2023/01/09 16:09:09 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERFACE_H
-# define INTERFACE_H
-# define ON_KEY_DOWN 2
-# define ON_KEY_UP 3
-# define ON_MOUSE_MOVE 6
-# define KEY_ESC 53
+#include "debug.h"
+#include "rt_mlx.h"
+#include "interface.h"
 
-void	init_interface(void);
-int		key_pressed(int key_code);
-int		key_released(int key_code);
-
-#endif
+void	init_debug(void)
+{
+	mlx_hook(get_frame()->window, ON_MOUSE_MOVE, 0x40, mouse_inspect, NULL);
+}

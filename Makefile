@@ -1,6 +1,6 @@
 NAME := rtv1
 CC := gcc
-DEBUGSRC := print.c
+DEBUGSRC := print.c mouse_inspect.c init_debug.c
 CORESRC := main.c init.c get_frame.c
 VECTORSRC := vec_add.c vec_dot.c vec_normalize.c vec_cross.c vec_length.c       \
 	vec_reflect.c vec_divide.c vec_multiply.c vec_substract.c vec_to_rot.c      \

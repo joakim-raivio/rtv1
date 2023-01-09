@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 13:46:04 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/15 19:52:20 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/09 15:50:07 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	init_getters(void)
 void	init_mlx(void)
 {
 	t_image	*image;
+
 	get_frame()->mlx = mlx_init();
 	if (!(get_frame()->mlx))
 		ft_panic("MLX initilization failed.");

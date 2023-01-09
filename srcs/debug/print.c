@@ -6,13 +6,11 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 20:35:16 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/28 20:36:07 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/09 15:45:02 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector.h"
-#include "quaternion.h"
-#include <stdio.h>
+#include "debug.h"
 
 void	print_vector(t_vector vector)
 {
