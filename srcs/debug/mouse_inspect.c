@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 15:43:18 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/09 16:34:26 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/09 16:56:39 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	mouse_inspect(int x, int y)
 						.direction = canvas_to_viewport(x, y),
 						.min_length = MIN_TRACE_LENGTH,
 						.max_length = MAX_TRACE_LENGTH});
+		printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 		print_vector(direction);
 		print_rotation(vec_to_rot(direction));
 		print_vector(vec_add(hit.location, vec_multiply(hit.direction, hit.length)));
