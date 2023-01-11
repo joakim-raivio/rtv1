@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec_multiply.c                                     :+:      :+:    :+:   */
+/*   get_quat_up.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 16:48:43 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/15 13:32:32 by jraivio          ###   ########.fr       */
+/*   Created: 2023/01/11 17:48:47 by jraivio           #+#    #+#             */
+/*   Updated: 2023/01/11 17:49:02 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "math3d.h"
 
-t_vector	vec_multiply(t_vector vector, double multiplier)
+t_vector	get_quat_up(t_quaternion quaternion)
 {
-	return ((t_vector){
-		.x = vector.x * multiplier,
-		.y = vector.y * multiplier,
-		.z = vector.z * multiplier
-	});
+	return(vec_rotate((t_vector){.x = 0, .y = 1, .z = 0}, quaternion));
 }

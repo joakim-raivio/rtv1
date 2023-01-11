@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 15:19:42 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/11 17:12:14 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/11 18:11:44 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,13 @@ int	main(int argc, char **argv)
 	init();
 	parse();
 	render();
-	print_quaternion(get_rotation(get_camera()));
+	t_rotation test_rot = (t_rotation){
+		.yaw = deg_to_rad(45),
+		.pitch = deg_to_rad(0),
+		.roll = deg_to_rad(0)};
+	print_rotation(test_rot);
+	print_quaternion(rot_to_quat(test_rot));
+	print_vector(get_quat_forward(rot_to_quat(test_rot)));
 	init_debug();
 	mlx_loop(get_frame()->mlx);
 	return (0);

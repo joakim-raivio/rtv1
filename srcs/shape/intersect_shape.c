@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "shape.h"
-#include "vector.h"
+#include "math3d.h"
 #include "tracing.h"
 
 static double	parse_result(t_intersect_result result, double min, double max)

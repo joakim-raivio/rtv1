@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "quaternion.h"
+#include "math3d.h"
 
 t_vector	get_quat_forward(t_quaternion quaternion)
 {

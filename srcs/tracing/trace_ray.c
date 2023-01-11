@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector.h"
+#include "math3d.h"
 #include "scene.h"
 #include "shape.h"
 

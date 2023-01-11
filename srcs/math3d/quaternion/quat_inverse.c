@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "quaternion.h"
+#include "math3d.h"
 
 t_quaternion	quat_inverse(t_quaternion quaternion)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector.h"
+#include "math3d.h"
 
 t_vector	vec_square(t_vector vector)
 {

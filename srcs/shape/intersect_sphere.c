@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "shape.h"
-#include "vector.h"
+#include "math3d.h"
 #include "camera.h"
 #include "math.h"
 

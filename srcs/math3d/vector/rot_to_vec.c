@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector.h"
+#include "math3d.h"
 #include <math.h>
 
 t_vector	rot_to_vec(t_rotation rotation)

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector.h"
+#include "math3d.h"
 
 t_vector	vec_divide(t_vector vector, double divider)
 {

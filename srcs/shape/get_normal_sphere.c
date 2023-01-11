@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "shape.h"
-#include "vector.h"
+#include "math3d.h"
 #include "tracing.h"
 
 t_vector	get_normal_sphere(t_shape sphere, t_vector location)

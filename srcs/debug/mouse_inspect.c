@@ -13,7 +13,7 @@
 #include "debug.h"
 #include "options.h"
 #include "tracing.h"
-#include "vector.h"
+#include "math3d.h"
 #include "render.h"
 #include "camera.h"
 

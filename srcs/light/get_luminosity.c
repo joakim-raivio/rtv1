@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "light.h"
-#include "vector.h"
+#include "math3d.h"
 #include "scene.h"
 #include "options.h"
 #include "libft.h"

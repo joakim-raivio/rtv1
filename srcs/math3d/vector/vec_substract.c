@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector.h"
+#include "math3d.h"
 
 t_vector	vec_substract(t_vector first, t_vector second)
 {

@@ -6,11 +6,11 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 14:52:25 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/11 17:06:13 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/11 18:14:41 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector.h"
+#include "math3d.h"
 #include <math.h>
 #include <stdio.h>
 
@@ -27,12 +27,9 @@ t_vector	rotate_yaw(t_vector *vector, double angle)
 }
 */
 
-#include "vector.h"
-#include "quaternion.h"
-
 t_vector	vec_rotate(t_vector vector, t_quaternion rotation)
 {
-	return(quat_to_vec(
+	return(get_quat_forward(
 		quat_rotate(vec_to_quat(vector), rotation)));
 }
 /*
