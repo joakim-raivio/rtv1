@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 14:52:25 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/11 18:14:41 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/11 18:46:35 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,18 @@ t_vector	rotate_yaw(t_vector *vector, double angle)
 }
 */
 
-t_vector	vec_rotate(t_vector vector, t_quaternion rotation)
+t_vector	vec_rotate(t_vector v, t_quaternion q)
 {
-	return(get_quat_forward(
-		quat_rotate(vec_to_quat(vector), rotation)));
+	t_quaternion	i;
+
+	i.x = q.w * v.x + q.y * v.z - q.z * v.y;
+	i.y = q.w * v.y + q.z * v.x - q.x * v.z;
+	i.z = q.w * v.z + q.x * v.y - q.y * v.x;
+	i.w = -q.x * v.x - q.y * v.y - q.z * v.z;
+	v.x = i.x * q.w + i.w * -q.x + i.y * -q.z - i.z * -q.y;
+	v.y = i.y * q.w + i.w * -q.y + i.z * -q.x - i.x * -q.z;
+	v.z = i.z * q.w + i.w * -q.z + i.x * -q.y - i.y * -q.x;
+	return (v);
 }
 /*
 t_vector	vec_rotate(t_vector vector, t_rotation rotation)

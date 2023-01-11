@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 16:36:53 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/11 17:53:39 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/11 19:58:35 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ t_quaternion	rot_to_quat(t_rotation rotation)
     double sr = sin(rotation.roll * 0.5);
     t_quaternion q;
 
-    q.w = cr * cp * cy + sr * sp * sy;
-    q.x = cy * cp * sr - sy * sp * cr;
-    q.y = cr * sp * cy + sr * cp * sy;
-    q.z = sy * cp * cr - cy * sp * sr;
+    q.w = cr * cp * cy - sr * sp * sy;
+    q.z = cy * cp * sr + sy * sp * cr;
+    q.y = sy * cp * cr + cy * sp * sr;
+    q.x = cy * sp * cr - sy * cp * sr;
 
     return q;
 }

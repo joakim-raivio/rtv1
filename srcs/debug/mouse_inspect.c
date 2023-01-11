@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 15:43:18 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/09 16:56:39 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/11 20:01:31 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,10 @@ int	mouse_inspect(int x, int y)
 						.min_length = MIN_TRACE_LENGTH,
 						.max_length = MAX_TRACE_LENGTH});
 		printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+		printf("Pixel X: %d - Y: %d\n", x, y);
 		print_vector(direction);
 		print_rotation(vec_to_rot(direction));
-		print_vector(vec_add(hit.location, vec_multiply(hit.direction, hit.length)));
+		print_vector(hit.location);
 		print_quaternion(rot_to_quat((t_rotation){
 				.yaw = deg_to_rad(HORIZONTAL_FOV * (((double)x / SCREEN_W) - 0.5)),
 				.pitch = deg_to_rad(VERTICAL_FOV * (((double)y / SCREEN_H) - 0.5)),

@@ -13,7 +13,7 @@
 #ifndef RENDER_H
 # define RENDER_H
 # include "rt_mlx.h"
-# include "vector.h"
+# include "math3d.h"
 
 void		screenloop(void);
 t_vector	canvas_to_viewport(int x, int y);
