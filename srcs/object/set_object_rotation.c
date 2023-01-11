@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   debug.h                                            :+:      :+:    :+:   */
+/*   set_object_rotation.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 20:36:47 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/11 17:12:37 by jraivio          ###   ########.fr       */
+/*   Created: 2023/01/11 16:57:14 by jraivio           #+#    #+#             */
+/*   Updated: 2023/01/11 17:00:56 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEBUG_H
-# define DEBUG_H
-# include "math3d.h"
-# include <stdio.h>
+#include "object.h"
 
-void	print_vector(t_vector vector);
-void	print_rotation(t_rotation rotation);
-void	print_quaternion(t_quaternion quaternion);
-int		mouse_inspect(int x, int y);
-void	init_debug(void);
+void	set_object_rotation(t_quaternion rotation, void *object)
+{
+	t_object *obj;
 
-#endif
+	obj = (t_object *)object;
+	obj->rotation = rotation;
+	obj->forward = get_quat_forward(rotation);
+	obj->up = get_quat_up(rotation);
+	obj->right = get_quat_right(rotation);
+}

@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   debug.h                                            :+:      :+:    :+:   */
+/*   get_right_vector.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 20:36:47 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/11 17:12:37 by jraivio          ###   ########.fr       */
+/*   Created: 2023/01/11 16:53:11 by jraivio           #+#    #+#             */
+/*   Updated: 2023/01/11 16:53:28 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEBUG_H
-# define DEBUG_H
-# include "math3d.h"
-# include <stdio.h>
+#include "object.h"
 
-void	print_vector(t_vector vector);
-void	print_rotation(t_rotation rotation);
-void	print_quaternion(t_quaternion quaternion);
-int		mouse_inspect(int x, int y);
-void	init_debug(void);
-
-#endif
+t_vector		get_right_vector(void *object)
+{
+	return(((t_object *)object)->right);
+}

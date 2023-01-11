@@ -2,20 +2,24 @@ NAME := rtv1
 CC := gcc
 DEBUGSRC := print.c mouse_inspect.c init_debug.c
 CORESRC := main.c init.c get_frame.c
+OBJECTSRC := get_rotation.c get_location.c get_forward_vector.c                 \
+	get_up_vector.c get_right_vector.c get_scale.c get_type.c
 VECTORSRC := vec_add.c vec_dot.c vec_normalize.c vec_cross.c vec_length.c       \
 	vec_reflect.c vec_divide.c vec_multiply.c vec_substract.c vec_to_rot.c      \
 	rot_to_vec.c rad_to_deg.c deg_to_rad.c vec_rotate.c vec_square.c
 QUATERNIONSRC := quat_to_vec.c vec_to_quat.c rot_to_quat.c quat_inverse.c       \
-	quat_product.c quat_rotate.c
+	quat_product.c quat_rotate.c get_quat_forward.c
 CAMERASRC := get_camera.c
 SCENESRC := get_scene.c
-RENDERSRC := get_image.c add_pixel.c screenloop.c render.c canvas_to_viewport.c \
-	trace_ray.c get_hit_color.c get_luminosity.c
+RENDERSRC := get_image.c add_pixel.c screenloop.c render.c
+TRACINGSRC := trace_ray.c get_hit_color.c canvas_to_viewport.c
+LIGHTSRC := get_luminosity.c
 SHAPESRC := intersect_shape.c intersect_sphere.c get_normal_sphere.c
 INTERFACESRC := init_interface.c keys.c
 PARSESRC := parse.c
 FILES := $(CORESRC) $(CAMERASRC) $(SCENESRC) $(VECTORSRC) $(RENDERSRC)          \
-	$(INTERFACESRC) $(PARSESRC) $(SHAPESRC) $(QUATERNIONSRC) $(DEBUGSRC)
+	$(INTERFACESRC) $(PARSESRC) $(SHAPESRC) $(QUATERNIONSRC) $(DEBUGSRC)        \
+	$(TRACINGSRC) $(LIGHTSRC) $(OBJECTSRC)
 SRCSDIR := srcs
 SRCS = $(foreach SRC, $(FILES), $(shell find $(SRCSDIR) -name $(SRC)))
 OBJSDIR := objs

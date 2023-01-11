@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 15:19:42 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/09 16:05:46 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/11 17:12:14 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 #include "rt_mlx.h"
 #include "camera.h"
 #include "scene.h"
-#include "vector.h"
 #include "parse.h"
-#include "quaternion.h"
 #include "debug.h"
+#include "math3d.h"
 
 int	main(int argc, char **argv)
 {
@@ -26,6 +25,13 @@ int	main(int argc, char **argv)
 	init();
 	parse();
 	render();
+	print_quaternion(get_rotation(get_camera()));
+	init_debug();
+	mlx_loop(get_frame()->mlx);
+	return (0);
+}
+
+/*
 	t_rotation test_rot = (t_rotation){
 		.yaw = deg_to_rad(0),
 		.pitch = deg_to_rad(0),
@@ -41,7 +47,4 @@ int	main(int argc, char **argv)
 	//print_rotation(vec_to_rot(get_camera()->rotation));
 	//print_vector(get_camera()->rotation);
 	//print_vector(rot_to_vec(vec_to_rot(get_camera()->rotation)));
-	init_debug();
-	mlx_loop(get_frame()->mlx);
-	return (0);
-}
+*/

@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   debug.h                                            :+:      :+:    :+:   */
+/*   get_quat_forward.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 20:36:47 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/11 17:12:37 by jraivio          ###   ########.fr       */
+/*   Created: 2023/01/11 17:02:29 by jraivio           #+#    #+#             */
+/*   Updated: 2023/01/11 17:04:48 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEBUG_H
-# define DEBUG_H
-# include "math3d.h"
-# include <stdio.h>
+#include "quaternion.h"
 
-void	print_vector(t_vector vector);
-void	print_rotation(t_rotation rotation);
-void	print_quaternion(t_quaternion quaternion);
-int		mouse_inspect(int x, int y);
-void	init_debug(void);
-
-#endif
+t_vector	get_quat_forward(t_quaternion quaternion)
+{
+	return(vec_rotate((t_vector){.x = 0, .y = 0, .z = 1}, quaternion));
+}

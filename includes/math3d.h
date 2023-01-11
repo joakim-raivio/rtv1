@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector.h                                           :+:      :+:    :+:   */
+/*   math3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/23 14:05:39 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/28 15:06:37 by jraivio          ###   ########.fr       */
+/*   Created: 2023/01/11 17:08:59 by jraivio           #+#    #+#             */
+/*   Updated: 2023/01/11 17:11:00 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VECTOR_H
-# define VECTOR_H
+#ifndef MATH3D
+# define MATH3D
 
 typedef struct s_vector
 {
@@ -27,6 +27,23 @@ typedef struct s_rotation
 	double	roll;
 }	t_rotation;
 
+typedef struct s_quaternion
+{
+	double	w;
+	double	x;
+	double	y;
+	double	z;
+}	t_quaternion;
+
+t_vector		quat_to_vec(t_quaternion quaternion);
+t_quaternion	vec_to_quat(t_vector vector);
+t_quaternion	rot_to_quat(t_rotation rotation);
+t_quaternion	quat_inverse(t_quaternion quaternion);
+t_quaternion	quat_product(t_quaternion first, t_quaternion second);
+t_quaternion	quat_rotate(t_quaternion input, t_quaternion rotation);
+t_vector		get_quat_forward(t_quaternion quaternion);
+t_vector		get_quat_up(t_quaternion quaternion);
+t_vector		get_quat_right(t_quaternion quaternion);
 t_vector	vec_add(t_vector first, t_vector second);
 t_vector	vec_substract(t_vector first, t_vector second);
 t_vector	vec_multiply(t_vector vector, double multiplier);
@@ -40,7 +57,7 @@ t_rotation	vec_to_rot(t_vector vector);
 t_vector	rot_to_vec(t_rotation rotation);
 double		rad_to_deg(double radians);
 double		deg_to_rad(double degrees);
-t_vector	vec_rotate(t_vector, t_rotation);
+t_vector	vec_rotate(t_vector vector, t_quaternion rotation);
 t_vector	vec_square(t_vector vector);
 
 #endif

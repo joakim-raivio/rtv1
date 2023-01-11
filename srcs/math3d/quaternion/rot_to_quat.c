@@ -6,14 +6,13 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 16:36:53 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/28 20:50:26 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/10 22:37:55 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
 #include "quaternion.h"
 #include "math.h"
-#include "debug.h"
 
 t_quaternion	rot_to_quat(t_rotation rotation)
 {
@@ -26,9 +25,9 @@ t_quaternion	rot_to_quat(t_rotation rotation)
     t_quaternion q;
 
     q.w = cr * cp * cy + sr * sp * sy;
-    q.y = sr * cp * cy - cr * sp * sy;
-    q.x = cr * sp * cy + sr * cp * sy;
-    q.z = cr * cp * sy - sr * sp * cy;
+    q.x = sy * cp * cr - cy * sp * sr;
+    q.y = cr * sp * cy + sr * cp * sy;
+    q.z = cy * cp * sr - sy * sp * cr;
 
     return q;
 }

@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 14:52:25 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/28 18:29:57 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/11 17:06:13 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ t_vector	rotate_yaw(t_vector *vector, double angle)
 #include "vector.h"
 #include "quaternion.h"
 
-t_vector	vec_rotate(t_vector vector, t_rotation rotation)
+t_vector	vec_rotate(t_vector vector, t_quaternion rotation)
 {
 	return(quat_to_vec(
-		quat_rotate(vec_to_quat(vector), rot_to_quat(rotation))));
+		quat_rotate(vec_to_quat(vector), rotation)));
 }
 /*
 t_vector	vec_rotate(t_vector vector, t_rotation rotation)

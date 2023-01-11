@@ -6,15 +6,15 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 20:04:39 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/23 01:02:54 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/11 17:11:51 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TRACING_H
 # define TRACING_H
-# include "vector.h"
 # include "options.h"
 # include "object.h"
+# include "math3d.h"
 
 typedef struct s_hit
 {
