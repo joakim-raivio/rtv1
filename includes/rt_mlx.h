@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:01:24 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/15 21:56:06 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/12 20:13:31 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ typedef struct s_frame
 t_frame	*get_frame(void);
 t_image	*get_image(void);
 void	add_pixel(t_image *image, long x, long y, unsigned int color);
+int		on_expose(void *params);
 
 #endif

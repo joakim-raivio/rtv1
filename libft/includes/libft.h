@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:08:15 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/23 01:28:15 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/12 17:54:51 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,5 +108,7 @@ int		ft_intmin(int x, int y);
 int		ft_clampint(int input, int min, int max);
 void	ft_panic(char *message);
 double	ft_dblmax(double first, double second);
+double	ft_dblmin(double first, double second);
+double	ft_dblabs(double number);
 
 #endif

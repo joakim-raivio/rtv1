@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 20:04:19 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/28 18:39:16 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/12 18:41:53 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_hit	trace_ray(t_ray ray)
 
 //	printf("Ray direction -  X: %f, Y: %f, Z: %f\n", ray.direction.x, ray.direction.y, ray.direction.z);
 	closest_hit = (t_hit){.collided_shape = 0,
-		.length = MAX_TRACE_LENGTH};
+		.length = ray.max_length + 1};
 	i = 0;
 	while (i < MAX_SHAPES)
 	{

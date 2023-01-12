@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 13:46:04 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/09 15:50:07 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/12 20:17:32 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	init_mlx(void)
 	image->image = mlx_new_image(get_frame()->mlx, SCREEN_W, SCREEN_H);
 	image->address = mlx_get_data_addr(image->image, &(image->bits_per_pixel),
 			&(image->line_length), &(image->endian));
+	mlx_expose_hook(get_frame()->window, on_expose, NULL);
 }
 
 void	init(void)

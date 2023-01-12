@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   options.h                                          :+:      :+:    :+:   */
+/*   create_ray.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 21:54:16 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/12 20:39:16 by jraivio          ###   ########.fr       */
+/*   Created: 2023/01/12 17:38:57 by jraivio           #+#    #+#             */
+/*   Updated: 2023/01/12 18:04:25 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef OPTIONS_H
-# define OPTIONS_H
-# define MIN_TRACE_LENGTH 1
-# define MAX_TRACE_LENGTH 10000000
-# define BACKGROUND_COLOR 0x0008084F
-# define MAX_LIGHTS 4
-# define MAX_SHAPES 10
-# define SCREEN_W 1080
-# define SCREEN_H 1080
-# define VERTICAL_FOV 60
-# define HORIZONTAL_FOV 60
-# define WINDOW_NAME "RT"
-# define BACKGROUND_ILLUMINATION 0.15
+#include "tracing.h"
 
-#endif
+t_ray	create_ray(t_vector origin, t_vector direction, double min, double max)
+{
+	return ((t_ray){
+		.origin = origin,
+		.direction = direction,
+		.min_length = min,
+		.max_length = max
+	});
+}

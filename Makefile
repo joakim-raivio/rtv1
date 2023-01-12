@@ -1,7 +1,7 @@
 NAME := rtv1
 CC := gcc
 DEBUGSRC := print.c mouse_inspect.c init_debug.c
-CORESRC := main.c init.c get_frame.c
+CORESRC := main.c init.c get_frame.c on_expose.c
 OBJECTSRC := get_rotation.c get_location.c get_forward_vector.c                 \
 	get_up_vector.c get_right_vector.c get_scale.c get_type.c                   \
 	set_object_rotation.c
@@ -13,9 +13,11 @@ MATH3DSRC := vec_add.c vec_dot.c vec_normalize.c vec_cross.c vec_length.c       
 CAMERASRC := get_camera.c
 SCENESRC := get_scene.c
 RENDERSRC := get_image.c add_pixel.c screenloop.c render.c
-TRACINGSRC := trace_ray.c get_hit_color.c canvas_to_viewport.c
+TRACINGSRC := trace_ray.c get_hit_color.c canvas_to_viewport.c create_ray.c
 LIGHTSRC := get_luminosity.c
-SHAPESRC := intersect_shape.c intersect_sphere.c get_normal_sphere.c
+SHAPESRC := intersect_shape.c intersect_sphere.c get_sphere_normal.c            \
+	get_shape_normal.c intersect_plane.c get_shape_intersects.c                 \
+	get_plane_normal.c
 INTERFACESRC := init_interface.c keys.c
 PARSESRC := parse.c
 FILES := $(CORESRC) $(CAMERASRC) $(SCENESRC) $(MATH3DSRC) $(RENDERSRC)          \

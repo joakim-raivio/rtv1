@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   options.h                                          :+:      :+:    :+:   */
+/*   get_shape_intersects.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 21:54:16 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/12 20:39:16 by jraivio          ###   ########.fr       */
+/*   Created: 2023/01/12 16:22:58 by jraivio           #+#    #+#             */
+/*   Updated: 2023/01/12 16:33:58 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef OPTIONS_H
-# define OPTIONS_H
-# define MIN_TRACE_LENGTH 1
-# define MAX_TRACE_LENGTH 10000000
-# define BACKGROUND_COLOR 0x0008084F
-# define MAX_LIGHTS 4
-# define MAX_SHAPES 10
-# define SCREEN_W 1080
-# define SCREEN_H 1080
-# define VERTICAL_FOV 60
-# define HORIZONTAL_FOV 60
-# define WINDOW_NAME "RT"
-# define BACKGROUND_ILLUMINATION 0.15
+#include "shape.h"
 
-#endif
+t_intersect_result	get_shape_intersects(t_ray ray, t_shape shape)
+{
+	if (get_type(&shape) == plane)
+		return (intersect_plane(ray, shape));
+	return (intersect_sphere(ray, shape));
+}
