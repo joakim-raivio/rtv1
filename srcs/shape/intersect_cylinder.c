@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   intersect_sphere.c                                 :+:      :+:    :+:   */
+/*   intersect_cylinder.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 20:57:10 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/16 13:16:49 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/16 13:51:55 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,34 @@
 #include "math3d.h"
 #include "math.h"
 
-t_intersect_result	intersect_sphere(t_ray ray, t_shape sphere)
+t_intersect_result	intersect_cylinder(t_ray ray, t_shape cylinder)
 {
-	t_vector	sphere_location_delta;
+	t_vector	location_delta;
 	double		a;
 	double		b;
 	double		c;
 	double		discriminant;
 
-	sphere_location_delta = 
-		vec_substract(ray.origin, sphere.object.location);
-	a = 1;
-	b = 2 * vec_dot(ray.direction, sphere_location_delta);
-	c = vec_dot(sphere_location_delta, sphere_location_delta)
-	   	- (sphere.object.scale.x * sphere.object.scale.x);
+	location_delta = vec_substract(ray.origin, cylinder.object.location);
+	a = vec_dot(vec_substract(ray.direction, 
+		vec_multiply(cylinder.object.up,
+		vec_dot(ray.direction, cylinder.object.up)))
+		, vec_substract(ray.direction, 
+		vec_multiply(cylinder.object.up,
+		vec_dot(ray.direction, cylinder.object.up))));
+	b = 2 * vec_dot(vec_substract(ray.direction, 
+		vec_multiply(cylinder.object.up,
+		vec_dot(ray.direction, cylinder.object.up))), 
+		vec_substract(location_delta, 
+		vec_multiply(cylinder.object.up,
+		vec_dot(location_delta, cylinder.object.up))));
+		c = vec_dot(vec_substract(location_delta, 
+		vec_multiply(cylinder.object.up,
+		vec_dot(location_delta, cylinder.object.up)))
+		,vec_substract(location_delta, 
+		vec_multiply(cylinder.object.up,
+		vec_dot(location_delta, cylinder.object.up))))
+	   	- (cylinder.object.scale.x * cylinder.object.scale.x);
 	discriminant = (b * b) - (4 * a * c);
 	if (discriminant < 0)
 		return((t_intersect_result){

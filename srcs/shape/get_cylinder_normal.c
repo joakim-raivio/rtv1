@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   options.h                                          :+:      :+:    :+:   */
+/*   get_cylinder_normal.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/15 21:54:16 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/16 14:23:09 by jraivio          ###   ########.fr       */
+/*   Created: 2023/01/16 13:56:34 by jraivio           #+#    #+#             */
+/*   Updated: 2023/01/16 14:15:30 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef OPTIONS_H
-# define OPTIONS_H
-# define MIN_TRACE_LENGTH 1
-# define MAX_TRACE_LENGTH 10000000
-# define BACKGROUND_COLOR 0x0008084F
-# define MAX_LIGHTS 4
-# define MAX_SHAPES 10
-# define SCREEN_W 1080
-# define SCREEN_H 1080
-# define VERTICAL_FOV 45
-# define HORIZONTAL_FOV 45
-# define WINDOW_NAME "RT"
-# define BACKGROUND_ILLUMINATION 0.15
+#include "shape.h"
 
-#endif
+t_vector	get_cylinder_normal(t_shape cylinder, t_vector location)
+{
+	return(vec_substract(location,
+		vec_add(cylinder.object.location,
+		vec_multiply(cylinder.object.up,
+		vec_dot(vec_substract(location, cylinder.object.location),
+		cylinder.object.up)))));
+}
+
+//           (P2-P1)dot(v)
+//&Pr = P1 +  -------------
