@@ -17,7 +17,8 @@ TRACINGSRC := trace_ray.c get_hit_color.c canvas_to_viewport.c create_ray.c
 LIGHTSRC := get_luminosity.c
 SHAPESRC := intersect_shape.c intersect_sphere.c get_sphere_normal.c            \
 	get_shape_normal.c intersect_plane.c get_shape_intersects.c                 \
-	get_plane_normal.c intersect_cylinder.c get_cylinder_normal.c
+	get_plane_normal.c intersect_cylinder.c get_cylinder_normal.c               \
+	intersect_cone.c
 INTERFACESRC := init_interface.c keys.c
 PARSESRC := parse.c
 FILES := $(CORESRC) $(CAMERASRC) $(SCENESRC) $(MATH3DSRC) $(RENDERSRC)          \

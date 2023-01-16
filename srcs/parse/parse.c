@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:59:11 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/16 14:23:39 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/16 19:31:49 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,19 @@ void	parse(void)
 
 	get_scene()->shapes[5].object.type = cylinder;
 	get_scene()->shapes[5].object.scale = (t_vector){.x = 6, .y = 1, .z = 1};
-	get_scene()->shapes[5].object.location = (t_vector){.x = 0, .y = 0, .z = 30};
+	get_scene()->shapes[5].object.location = (t_vector){.x = -10, .y = 0, .z = 30};
 	get_scene()->shapes[5].color = (t_color){.red = 0.7, .green = 0.7, .blue = 0.0, .brightness = 0.75};
 	set_object_rotation(rot_to_quat((t_rotation)
 			{.yaw = deg_to_rad(0), .pitch = deg_to_rad(45), .roll = deg_to_rad(45)}),
 			&(get_scene()->shapes[5]));
+
+	get_scene()->shapes[6].object.type = cone;
+	get_scene()->shapes[6].object.scale = (t_vector){.x = 2, .y = 1, .z = 1};
+	get_scene()->shapes[6].object.location = (t_vector){.x = 10, .y = 0, .z = 30};
+	get_scene()->shapes[6].color = (t_color){.red = 1, .green = 0.5, .blue = 0.5, .brightness = 0.75};
+	set_object_rotation(rot_to_quat((t_rotation)
+			{.yaw = deg_to_rad(0), .pitch = deg_to_rad(0), .roll = deg_to_rad(0)}),
+			&(get_scene()->shapes[6]));
 
 	get_scene()->lights[0].object.location.x = 0;
 	get_scene()->lights[0].object.location.y = 2;
@@ -66,8 +74,8 @@ void	parse(void)
 	get_scene()->lights[1].object.location.y = 100;
 	get_scene()->lights[1].object.location.z = 0;
 	get_scene()->lights[1].intensity = 0.1;
-	get_camera()->location = (t_vector){.x = 0, .y = 5, .z = -100.1};
+	get_camera()->location = (t_vector){.x = 0, .y = 100, .z = 0.1};
 	set_object_rotation(rot_to_quat((t_rotation)
-			{.yaw = deg_to_rad(0), .pitch = deg_to_rad(0), .roll = deg_to_rad(0)}),
+			{.yaw = deg_to_rad(0), .pitch = deg_to_rad(90), .roll = deg_to_rad(0)}),
 			get_camera());
 }
