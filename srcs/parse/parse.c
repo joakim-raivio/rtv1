@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:59:11 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/16 19:31:49 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/18 17:08:39 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 #include "object.h"
 #include "camera.h"
 #include "scene.h"
+#include "libft.h"
+#include <stdlib.h>
+#include <fcntl.h>
 
-void	parse(void)
+void	placeholder_objects(void)
 {
-
 	get_scene()->shapes[0].object.type = sphere;
 	get_scene()->shapes[0].object.scale = (t_vector){.x = 3, .y = 1, .z = 1};
 	get_scene()->shapes[0].object.location = (t_vector){.x = 0, .y = 0, .z = 20};
@@ -78,4 +80,29 @@ void	parse(void)
 	set_object_rotation(rot_to_quat((t_rotation)
 			{.yaw = deg_to_rad(0), .pitch = deg_to_rad(90), .roll = deg_to_rad(0)}),
 			get_camera());
+
+}
+
+void	parse_line(char *line)
+{
+	char **fields;
+	fields = ft_strsplit(line, ',');
+	
+}
+
+void	parse(char *file)
+{
+	int		fd;
+	char	*line;
+
+	fd = open(file, O_RDONLY);
+	if (!fd || fd < 0)
+		ft_panic("Error opening file");
+	while (get_next_line(fd, &line))
+	{
+		parse_line(line);
+		free(line);
+	}
+	free(line);
+	close(fd);
 }
