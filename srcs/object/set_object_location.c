@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.h                                            :+:      :+:    :+:   */
+/*   set_object_location.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 16:59:44 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/19 19:28:24 by jraivio          ###   ########.fr       */
+/*   Created: 2023/01/11 16:57:14 by jraivio           #+#    #+#             */
+/*   Updated: 2023/01/19 17:26:05 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSE_H
-# define PARSE_H
-# include "object.h"
+#include "object.h"
+#include "math3d.h"
 
-void			parse(char *file);
-void			add_object(char **fields, void *object);
-void			add_camera(char **fields);
-void			add_light(char **fields);
-void			add_shape(char **fields);
-t_object_type	str_to_type(char *str);
-
-#endif
+void	set_object_location(t_vector location, void *object)
+{
+	((t_object *)object)->location = location;
+}

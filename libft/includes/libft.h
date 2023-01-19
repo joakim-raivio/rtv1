@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:08:15 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/18 17:02:46 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/19 17:02:49 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,5 +112,6 @@ double		ft_dblmin(double first, double second);
 double		ft_dblabs(double number);
 long int	ft_atol(const char *str);
 double		ft_atod(const char *str);
+size_t		ft_splitsize(char **array);
 
 #endif

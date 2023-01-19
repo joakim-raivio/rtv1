@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.h                                            :+:      :+:    :+:   */
+/*   add_camera.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 16:59:44 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/19 19:28:24 by jraivio          ###   ########.fr       */
+/*   Created: 2023/01/19 16:37:05 by jraivio           #+#    #+#             */
+/*   Updated: 2023/01/19 17:54:47 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSE_H
-# define PARSE_H
-# include "object.h"
+#include "parse_format.h"
+#include "camera.h"
+#include "libft.h"
+#include "parse.h"
 
-void			parse(char *file);
-void			add_object(char **fields, void *object);
-void			add_camera(char **fields);
-void			add_light(char **fields);
-void			add_shape(char **fields);
-t_object_type	str_to_type(char *str);
-
-#endif
+void	add_camera(char **fields)
+{
+	if (ft_splitsize(fields) < P_CAMERASIZE)
+		return ;
+	add_object(fields, get_camera());
+}

@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 14:07:44 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/11 17:11:34 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/19 19:17:32 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef enum e_object_type
 	cone
 }	t_object_type;
 
-typedef struct	s_object
+typedef struct s_object
 {
 	t_vector		location;
 	t_quaternion	rotation;
@@ -36,8 +36,11 @@ typedef struct	s_object
 	t_object_type	type;
 }	t_object;
 
+
 t_object		get_empty_object(void);
+void			set_object_location(t_vector location, void *object);
 void			set_object_rotation(t_quaternion rotation, void *object);
+void			set_object_scale(t_vector scale, void *object);
 t_quaternion	get_rotation(void *object);
 t_vector		get_location(void *object);
 t_vector		get_forward_vector(void *object);

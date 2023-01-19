@@ -23,7 +23,7 @@ FILES = ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr 		   \
 			ft_lstdelone ft_lstdel ft_lstadd ft_lstiter ft_lstmap ft_memclear  \
 			ft_strlcpy ft_iswhitespace get_next_line ft_lstpopref ft_strjoind  \
 			ft_strsplit_free ft_freearray ft_intmax ft_intmin ft_clampint      \
-			ft_panic ft_dblmax ft_dblmin ft_dblabs ft_atol ft_atod
+			ft_panic ft_dblmax ft_dblmin ft_dblabs ft_atol ft_atod ft_splitsize
 
 SRCSDIR := srcs
 SRCS := $(addprefix $(SRCSDIR)/, $(addsuffix .c, $(FILES)))

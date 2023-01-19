@@ -1,10 +1,11 @@
-#type,locX,locY,locZ,rotYaw,rotPitch,rotRoll,scaleX,scaleY,scaleZ
-#Shapes += colorRed,colorGreen,colorBlue,colorAlpha,brightness
+#type,locX,locY,locZ,rotYaw,rotPitch,rotRoll
+#Shapes += scaleX,scaleY,scaleZ,colorRed,colorGreen,colorBlue,colorAlpha,brightness
 #Lights += intensity
-camera,0,0,-20,0,0,0
-sphere,0,0,0,0,0,0,1,1,1,1,0,0,1,1
-sphere,0,0,0,5,0,0,1,1,1,0,1,0,1,1
-sphere,0,0,0,-5,0,0,1,1,1,0,0,1,1,1
-light,100,100,-100,0,0,0,1,1,1,1
-plane,0,0,-2,0,0,0,1,1,1,0.5,0.5,0.5,1,0,8
-
+#Camera += horizontalFov, verticalFov //todo
+camera,0,10,-40,0,10,0
+sphere,0,1.5,0,0,0,0,1,1,1,1,0,0,1,1
+sphere,5,1.5,0,0,0,0,1,1,1,0,1,0,1,1
+sphere,-5,1.5,0,0,0,0,1,1,1,0,0,1,1,1
+light,100,100,-100,0,0,0,0.5
+light,-100,100,-100,0,0,0,0.5
+plane,0,0,-2,0,0,0,1,1,1,0.5,0.5,0.5,1,1

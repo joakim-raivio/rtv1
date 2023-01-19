@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 15:19:42 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/11 19:08:58 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/19 17:18:45 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 	(void)argc;
 	(void)argv;
 	init();
-	parse();
+	parse(*(argv + 1));
 	render();
 	t_rotation test_rot = (t_rotation){
 		.yaw = deg_to_rad(45),

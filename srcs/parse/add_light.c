@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.h                                            :+:      :+:    :+:   */
+/*   add_light.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 16:59:44 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/19 19:28:24 by jraivio          ###   ########.fr       */
+/*   Created: 2023/01/19 16:37:05 by jraivio           #+#    #+#             */
+/*   Updated: 2023/01/19 18:51:35 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSE_H
-# define PARSE_H
-# include "object.h"
+#include "parse_format.h"
+#include "scene.h"
+#include "libft.h"
+#include "parse.h"
+#include "options.h"
 
-void			parse(char *file);
-void			add_object(char **fields, void *object);
-void			add_camera(char **fields);
-void			add_light(char **fields);
-void			add_shape(char **fields);
-t_object_type	str_to_type(char *str);
+void	add_light(char **fields)
+{
+	static int	light_count = 0;
 
-#endif
+	if (ft_splitsize(fields) < P_LIGHTSIZE || light_count >= MAX_LIGHTS)
+		return ;
+	add_object(fields, &(get_scene()->lights[light_count]));
+	get_scene()->lights[light_count].intensity = ft_atod(fields[P_INTENSITY]);
+	light_count++;
+}

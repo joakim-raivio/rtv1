@@ -4,7 +4,7 @@ DEBUGSRC := print.c mouse_inspect.c init_debug.c
 CORESRC := main.c init.c get_frame.c on_expose.c
 OBJECTSRC := get_rotation.c get_location.c get_forward_vector.c                 \
 	get_up_vector.c get_right_vector.c get_scale.c get_type.c                   \
-	set_object_rotation.c
+	set_object_rotation.c set_object_location.c
 MATH3DSRC := vec_add.c vec_dot.c vec_normalize.c vec_cross.c vec_length.c       \
 	vec_reflect.c vec_divide.c vec_multiply.c vec_substract.c vec_to_rot.c      \
 	rot_to_vec.c rad_to_deg.c deg_to_rad.c vec_rotate.c vec_square.c            \
@@ -20,7 +20,8 @@ SHAPESRC := intersect_shape.c intersect_sphere.c get_sphere_normal.c            
 	get_plane_normal.c intersect_cylinder.c get_cylinder_normal.c               \
 	intersect_cone.c
 INTERFACESRC := init_interface.c keys.c
-PARSESRC := parse.c
+PARSESRC := parse.c add_object.c add_camera.c add_light.c add_shape.c           \
+	str_to_type.c
 FILES := $(CORESRC) $(CAMERASRC) $(SCENESRC) $(MATH3DSRC) $(RENDERSRC)          \
 	$(INTERFACESRC) $(PARSESRC) $(SHAPESRC) $(DEBUGSRC) $(TRACINGSRC)           \
 	$(LIGHTSRC) $(OBJECTSRC)
@@ -87,7 +88,10 @@ run: all
 	./$(NAME)
 
 debug: OFLAGS += -g
-debug: re
+debug: fclean .prerequisites debuglib $(OBJS) Makefile 
+	@touch .prerequisites
+	@echo "Compiling project binary\n"
+	$(CC) $(OBJS) $(CFLAGS) -o $(NAME)
 
 drun: debug
 	lldb $(NAME) 

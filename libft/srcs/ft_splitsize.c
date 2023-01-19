@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.h                                            :+:      :+:    :+:   */
+/*   ft_splitsize.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 16:59:44 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/19 19:28:24 by jraivio          ###   ########.fr       */
+/*   Created: 2023/01/19 16:55:12 by jraivio           #+#    #+#             */
+/*   Updated: 2023/01/19 17:19:40 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSE_H
-# define PARSE_H
-# include "object.h"
+#include "libft.h"
 
-void			parse(char *file);
-void			add_object(char **fields, void *object);
-void			add_camera(char **fields);
-void			add_light(char **fields);
-void			add_shape(char **fields);
-t_object_type	str_to_type(char *str);
+size_t	ft_splitsize(char **array)
+{
+	size_t	size;
 
-#endif
+	size = 0;
+	if (!array)
+		return (size);
+	while (*array++)
+		size++;
+	return (size);
+}
