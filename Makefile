@@ -9,7 +9,8 @@ MATH3DSRC := vec_add.c vec_dot.c vec_normalize.c vec_cross.c vec_length.c       
 	vec_reflect.c vec_divide.c vec_multiply.c vec_substract.c vec_to_rot.c      \
 	rot_to_vec.c rad_to_deg.c deg_to_rad.c vec_rotate.c vec_square.c            \
 	quat_to_vec.c vec_to_quat.c rot_to_quat.c quat_inverse.c quat_product.c     \
-	quat_rotate.c get_quat_forward.c get_quat_up.c get_quat_right.c
+	quat_rotate.c get_quat_forward.c get_quat_up.c get_quat_right.c             \
+	vec_distance.c
 CAMERASRC := get_camera.c
 SCENESRC := get_scene.c
 RENDERSRC := get_image.c add_pixel.c screenloop.c render.c
@@ -18,7 +19,7 @@ LIGHTSRC := get_luminosity.c
 SHAPESRC := intersect_shape.c intersect_sphere.c get_sphere_normal.c            \
 	get_shape_normal.c intersect_plane.c get_shape_intersects.c                 \
 	get_plane_normal.c intersect_cylinder.c get_cylinder_normal.c               \
-	intersect_cone.c
+	intersect_cone.c get_cone_angle.c get_cone_normal.c
 INTERFACESRC := init_interface.c keys.c
 PARSESRC := parse.c add_object.c add_camera.c add_light.c add_shape.c           \
 	str_to_type.c

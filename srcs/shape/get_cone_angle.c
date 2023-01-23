@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec_square.c                                       :+:      :+:    :+:   */
+/*   get_cone_angle.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 18:55:42 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/23 20:42:28 by jraivio          ###   ########.fr       */
+/*   Created: 2023/01/23 18:47:34 by jraivio           #+#    #+#             */
+/*   Updated: 2023/01/23 18:48:44 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "math3d.h"
+#include "shape.h"
+#include <math.h>
 
-double	vec_square(t_vector vector)
+double	get_cone_angle(t_shape cone)
 {
-	return(vector.x * vector.x
-		+ vector.y * vector.y
-		+ vector.z * vector.z
-		);
+	return (atan(cone.object.scale.x / cone.object.scale.y));
 }

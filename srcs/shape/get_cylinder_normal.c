@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:56:34 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/23 17:22:15 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/23 20:40:12 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,3 @@ t_vector	get_cylinder_normal(t_shape cylinder, t_vector location)
 		vec_dot(vec_substract(location, cylinder.object.location),
 		cylinder.object.up))))));
 }
-
-//           (P2-P1)dot(v)
-//&Pr = P1 +  -------------

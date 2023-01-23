@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 14:37:11 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/16 14:46:46 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/23 20:11:44 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,7 @@ t_vector			get_shape_normal(t_shape shape, t_hit hit);
 t_vector			get_sphere_normal(t_shape sphere, t_vector location);
 t_vector			get_plane_normal(t_shape plane, t_hit hit);
 t_vector			get_cylinder_normal(t_shape cylinder, t_vector location);
+t_vector			get_cone_normal(t_shape cone, t_vector location);
+double				get_cone_angle(t_shape cone);
 
 #endif

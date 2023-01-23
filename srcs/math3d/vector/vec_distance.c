@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec_square.c                                       :+:      :+:    :+:   */
+/*   vec_distance.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 18:55:42 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/23 20:42:28 by jraivio          ###   ########.fr       */
+/*   Created: 2023/01/23 18:27:05 by jraivio           #+#    #+#             */
+/*   Updated: 2023/01/23 18:44:39 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "math3d.h"
 
-double	vec_square(t_vector vector)
+double	vec_distance(t_vector first, t_vector second)
 {
-	return(vector.x * vector.x
-		+ vector.y * vector.y
-		+ vector.z * vector.z
-		);
+	return (vec_length(vec_substract(first, second)));
 }

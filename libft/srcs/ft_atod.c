@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 16:24:26 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/19 18:40:56 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/23 17:52:17 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ double	ft_atod(const char *str)
 		str++;
 	fraction = ft_atol(str);
 	if (fraction > 1)
+		fraction /= 10;
+	while (*str++ == '0')
 		fraction /= 10;
 	if (whole < 0)
 		fraction *= -1;
