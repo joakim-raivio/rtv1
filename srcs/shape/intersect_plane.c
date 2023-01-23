@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:46:23 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/12 17:15:25 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/23 23:54:32 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,3 @@ t_intersect_result	intersect_plane(t_ray ray, t_shape plane)
 		.second = ray.max_length + 2
 	});
 }
-
-/*
-bool intersectPlane(const Vec3f &n, const Vec3f &p0, const Vec3f &l0, const Vec3f &l, float &t)
-{
-    // assuming vectors are all normalized
-    float denom = dotProduct(n, l);
-    if (denom > 1e-6) {
-        Vec3f p0l0 = p0 - l0;
-        t = dotProduct(p0l0, n) / denom; 
-        return (t >= 0);
-    }
-
-    return false;
-}
-*/
