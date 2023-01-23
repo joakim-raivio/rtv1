@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 15:43:18 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/11 20:01:31 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/23 17:17:48 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 int	mouse_inspect(int x, int y)
 {
 	t_hit		hit;
-	t_vector	direction;
+//	t_vector	direction;
 
 	if (x >= 0 && x < SCREEN_W && y >= 0 && y < SCREEN_H)
 	{
-		direction = canvas_to_viewport(x, y);
+		//direction = canvas_to_viewport(x, y);
 		hit = trace_ray((t_ray){
 						.origin = get_camera()->location,
 						.direction = canvas_to_viewport(x, y),
@@ -32,6 +32,9 @@ int	mouse_inspect(int x, int y)
 						.max_length = MAX_TRACE_LENGTH});
 		printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 		printf("Pixel X: %d - Y: %d\n", x, y);
+		printf("Normal: ");
+		print_vector(hit.normal);
+/*
 		print_vector(direction);
 		print_rotation(vec_to_rot(direction));
 		print_vector(hit.location);
@@ -50,6 +53,7 @@ int	mouse_inspect(int x, int y)
 				.pitch = deg_to_rad(VERTICAL_FOV * (((double)y / SCREEN_H) - 0.5)),
 				.roll = 0
 				})))));
+*/
 	}
 	return (0);
 }

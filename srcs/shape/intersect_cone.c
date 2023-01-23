@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 20:57:10 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/16 14:57:42 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/23 17:41:16 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_intersect_result	intersect_cone(t_ray ray, t_shape cone)
 	double		angle;
 
 	location_delta = vec_substract(ray.origin, cone.object.location);
-	angle = deg_to_rad(15);
+	angle = atan(cone.object.scale.x / cone.object.scale.y);
 	a = cosh(angle) * vec_dot(vec_substract(ray.direction, //todo: add angles to cone
 		vec_multiply(cone.object.up,
 		vec_dot(ray.direction, cone.object.up)))
