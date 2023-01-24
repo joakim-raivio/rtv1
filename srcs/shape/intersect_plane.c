@@ -6,14 +6,12 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 15:46:23 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/23 23:54:32 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/24 17:09:43 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shape.h"
 #include "math3d.h"
-#include "camera.h"
-#include "math.h"
 #include "libft.h"
 
 t_intersect_result	intersect_plane(t_ray ray, t_shape plane)

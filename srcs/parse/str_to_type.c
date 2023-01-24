@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 19:04:18 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/19 19:46:59 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/24 14:12:30 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ t_object_type	str_to_type(char *str)
 	i = -1;
 	while (++i < 7)
 		if (!ft_strcmp(type_mapping[i], str))
-			return (i);
+			return ((t_object_type)i);
 	return (0);
 }

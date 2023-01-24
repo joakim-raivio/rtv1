@@ -6,13 +6,13 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 16:51:29 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/11 16:52:35 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/24 16:41:52 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "object.h"
 
-t_vector		get_forward_vector(void *object)
+t_vector	get_forward_vector(void *object)
 {
-	return(((t_object *)object)->forward);
+	return (((t_object *)object)->forward);
 }

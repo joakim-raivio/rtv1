@@ -6,13 +6,13 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 16:54:05 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/11 16:54:21 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/24 16:42:57 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "object.h"
 
-t_vector		get_scale(void *object)
+t_vector	get_scale(void *object)
 {
-	return(((t_object *)object)->scale);
+	return (((t_object *)object)->scale);
 }

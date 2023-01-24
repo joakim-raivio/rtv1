@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 18:13:42 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/23 20:39:51 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/24 17:01:50 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ t_vector	get_cone_normal(t_shape cone, t_vector location)
 	if (vec_dot(direction, vec_substract(location, cone.object.location)) < 0)
 		direction = vec_multiply(direction, -1);
 	return (vec_normalize(vec_substract(location,
-		vec_add(cone.object.location, 
-		vec_multiply(direction, axis_distance)))));
+				vec_add(cone.object.location,
+					vec_multiply(direction, axis_distance)))));
 }

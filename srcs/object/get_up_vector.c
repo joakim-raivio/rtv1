@@ -6,13 +6,13 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 16:52:48 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/11 16:53:48 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/24 16:43:40 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "object.h"
 
-t_vector		get_up_vector(void *object)
+t_vector	get_up_vector(void *object)
 {
-	return(((t_object *)object)->up);
+	return (((t_object *)object)->up);
 }

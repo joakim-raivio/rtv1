@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 16:41:56 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/11 16:47:39 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/24 16:42:32 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 t_quaternion	get_rotation(void *object)
 {
-	return(((t_object *)object)->rotation);
+	return (((t_object *)object)->rotation);
 }

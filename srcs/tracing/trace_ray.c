@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 20:04:19 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/12 18:41:53 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/24 17:18:22 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,12 @@
 #include "scene.h"
 #include "shape.h"
 
-#include <stdio.h>
-
 t_hit	trace_ray(t_ray ray)
 {
 	t_hit	closest_hit;
 	t_hit	current_hit;
 	int		i;
 
-//	printf("Ray direction -  X: %f, Y: %f, Z: %f\n", ray.direction.x, ray.direction.y, ray.direction.z);
 	closest_hit = (t_hit){.collided_shape = 0,
 		.length = ray.max_length + 1};
 	i = 0;
@@ -31,7 +28,7 @@ t_hit	trace_ray(t_ray ray)
 		if (get_scene()->shapes[i].object.type == null)
 		{
 			i++;
-			continue;
+			continue ;
 		}
 		current_hit = intersect_shape(ray, &(get_scene()->shapes[i]));
 		if (current_hit.length < closest_hit.length)

@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 17:02:29 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/11 17:04:48 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/24 16:20:57 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 t_vector	get_quat_forward(t_quaternion quaternion)
 {
-	return(vec_rotate((t_vector){.x = 0, .y = 0, .z = 1}, quaternion));
+	return (vec_rotate((t_vector){.x = 0, .y = 0, .z = 1}, quaternion));
 }

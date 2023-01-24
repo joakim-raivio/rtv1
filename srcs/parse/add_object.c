@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:50:25 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/19 19:41:38 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/24 16:45:40 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	add_object(char **fields, void *object)
 		object);
 	set_object_rotation(rot_to_quat((t_rotation)
 		{.yaw = deg_to_rad(ft_atod(fields[P_ROTYAW])),
-		.pitch = deg_to_rad(ft_atod(fields[P_ROTPITCH])),
-		.roll = deg_to_rad(ft_atod(fields[P_ROTROLL]))}),
+			.pitch = deg_to_rad(ft_atod(fields[P_ROTPITCH])),
+			.roll = deg_to_rad(ft_atod(fields[P_ROTROLL]))}),
 		object);
 }

@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 16:36:53 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/11 19:58:35 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/24 16:33:56 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,19 @@
 
 t_quaternion	rot_to_quat(t_rotation rotation)
 {
-    double cy = cos(rotation.yaw * 0.5);
-    double sy = sin(rotation.yaw * 0.5);
-    double cp = cos(rotation.pitch * 0.5);
-    double sp = sin(rotation.pitch * 0.5);
-    double cr = cos(rotation.roll * 0.5);
-    double sr = sin(rotation.roll * 0.5);
-    t_quaternion q;
+	t_rotation		c;
+	t_rotation		s;
+	t_quaternion	q;
 
-    q.w = cr * cp * cy - sr * sp * sy;
-    q.z = cy * cp * sr + sy * sp * cr;
-    q.y = sy * cp * cr + cy * sp * sr;
-    q.x = cy * sp * cr - sy * cp * sr;
-
-    return q;
+	c.yaw = cos(rotation.yaw * 0.5);
+	s.yaw = sin(rotation.yaw * 0.5);
+	c.pitch = cos(rotation.pitch * 0.5);
+	s.pitch = sin(rotation.pitch * 0.5);
+	c.roll = cos(rotation.roll * 0.5);
+	s.roll = sin(rotation.roll * 0.5);
+	q.w = c.roll * c.pitch * c.yaw - s.roll * s.pitch * s.yaw;
+	q.z = c.yaw * c.pitch * s.roll + s.yaw * s.pitch * c.roll;
+	q.y = s.yaw * c.pitch * c.roll + c.yaw * s.pitch * s.roll;
+	q.x = c.yaw * s.pitch * c.roll - s.yaw * c.pitch * s.roll;
+	return (q);
 }

@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 20:50:43 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/12 17:33:01 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/24 17:12:05 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,13 @@ t_hit	intersect_shape(t_ray ray, t_shape *shape)
 
 	hit_result.length = parse_result(get_shape_intersects(ray, *shape),
 			ray.min_length, ray.max_length);
-	if (hit_result.length > ray.max_length || hit_result.length < ray.min_length)
+	if (hit_result.length > ray.max_length
+		|| hit_result.length < ray.min_length)
 		return (hit_result);
-	hit_result.location = vec_add(ray.origin, 
-		vec_multiply(ray.direction, hit_result.length));
-	hit_result.direction = ray.direction,
+	hit_result.location = vec_add(ray.origin,
+			vec_multiply(ray.direction, hit_result.length));
+	hit_result.direction = ray.direction;
 	hit_result.collided_shape = (t_object *)shape;
 	hit_result.normal = get_shape_normal(*shape, hit_result);
-//vec_normalize(vec_substract(shape->object.location,
-//	hit_result.location));
 	return (hit_result);
 }

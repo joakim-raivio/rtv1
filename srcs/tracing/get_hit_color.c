@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 19:57:13 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/23 14:11:55 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/24 17:17:37 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ unsigned int	get_hit_color(t_hit hit)
 	color = ((t_shape *)(hit.collided_shape))->color;
 	color.brightness *= get_luminosity(hit);
 	return ((unsigned int)(
-			ft_intmin((int)(color.brightness * color.red * 255), 255) << 16 | \
-			ft_intmin((int)(color.brightness * color.green * 255), 255) << 8 | \
-			ft_intmin((int)(color.brightness * color.blue * 255), 255)
+		ft_intmin((int)(color.brightness * color.red * 255), 255) << 16
+		| ft_intmin((int)(color.brightness * color.green * 255), 255) << 8
+		| ft_intmin((int)(color.brightness * color.blue * 255), 255)
 			));
 }

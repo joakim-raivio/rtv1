@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 16:54:50 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/11 16:55:12 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/24 16:43:18 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 t_object_type	get_type(void *object)
 {
-	return(((t_object *)object)->type);
+	return (((t_object *)object)->type);
 }

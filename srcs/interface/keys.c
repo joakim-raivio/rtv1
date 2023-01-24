@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:39:44 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/14 16:53:29 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/24 16:19:13 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@ int	key_pressed(int key_code)
 {
 	if (key_code == KEY_ESC)
 		exit(0);
-	return(0);
+	return (0);
 }
 
 int	key_released(int key_code)
 {
-	(void)key_code;
+	if (key_code == KEY_ESC)
+		exit(0);
 	return (0);
 }

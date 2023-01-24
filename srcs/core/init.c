@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 13:46:04 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/12 20:17:32 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/24 16:12:32 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "camera.h"
 #include "scene.h"
 #include "interface.h"
+#include "options.h"
 
 void	init_getters(void)
 {

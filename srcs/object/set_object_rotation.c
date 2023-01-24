@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 16:57:14 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/11 17:47:55 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/24 16:43:58 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	set_object_rotation(t_quaternion rotation, void *object)
 {
-	t_object *obj;
+	t_object	*obj;
 
 	obj = (t_object *)object;
 	obj->rotation = rotation;

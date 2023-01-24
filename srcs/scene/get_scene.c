@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:00:57 by jraivio           #+#    #+#             */
-/*   Updated: 2022/11/23 15:13:44 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/24 16:59:54 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_scene	*get_scene(void)
 {
-	static t_scene scene;
+	static t_scene	scene;
 
 	return (&scene);
 }
