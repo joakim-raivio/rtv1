@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 13:46:04 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/24 18:38:07 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/25 12:31:54 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	init_mlx(void)
 	t_frame	*frame;
 
 	frame = get_frame();
-	frame = mlx_init();
+	frame->mlx = mlx_init();
 	if (!(frame->mlx))
 		ft_panic("MLX initilization failed.");
 	frame->window = mlx_new_window(frame->mlx,
