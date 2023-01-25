@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 14:37:11 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/23 20:11:44 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/25 13:50:53 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 # include "object.h"
 # include "color.h"
 
-typedef struct	s_shape
+typedef struct s_shape
 {
 	t_object	object;
 	t_color		color;
 }	t_shape;
 
-typedef struct	s_intersect_result
+typedef struct s_intersect_result
 {
 	double	first;
 	double	second;

@@ -6,16 +6,16 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 13:46:04 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/25 12:31:54 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/25 13:49:15 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rt_mlx.h"
-#include "rt.h"
 #include "camera.h"
 #include "scene.h"
 #include "interface.h"
 #include "options.h"
+#include "libft.h"
 
 void	init_getters(void)
 {

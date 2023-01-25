@@ -10,8 +10,7 @@ MATH3DSRC := vec_add.c vec_dot.c vec_normalize.c vec_cross.c vec_length.c       
 	quat_to_vec.c vec_to_quat.c rot_to_quat.c quat_inverse.c quat_product.c     \
 	quat_rotate.c get_quat_forward.c get_quat_up.c get_quat_right.c             \
 	vec_distance.c
-CAMERASRC := get_camera.c
-SCENESRC := get_scene.c
+SCENESRC := get_scene.c get_camera.c
 RENDERSRC := get_image.c add_pixel.c screenloop.c render.c
 TRACINGSRC := trace_ray.c get_hit_color.c canvas_to_viewport.c create_ray.c
 LIGHTSRC := get_luminosity.c calculate_diffusion.c line_collision.c
@@ -22,9 +21,8 @@ SHAPESRC := intersect_shape.c intersect_sphere.c get_sphere_normal.c            
 INTERFACESRC := init_interface.c keys.c
 PARSESRC := parse.c add_object.c add_camera.c add_light.c add_shape.c           \
 	str_to_type.c
-FILES := $(CORESRC) $(CAMERASRC) $(SCENESRC) $(MATH3DSRC) $(RENDERSRC)          \
-	$(INTERFACESRC) $(PARSESRC) $(SHAPESRC) $(TRACINGSRC) $(LIGHTSRC)           \
-	$(OBJECTSRC)
+FILES := $(CORESRC) $(SCENESRC) $(MATH3DSRC) $(RENDERSRC) $(OBJECTSRC)          \
+	$(INTERFACESRC) $(PARSESRC) $(SHAPESRC) $(TRACINGSRC) $(LIGHTSRC)           
 SRCSDIR := srcs
 SRCS = $(foreach SRC, $(FILES), $(shell find $(SRCSDIR) -name $(SRC)))
 OBJSDIR := objs

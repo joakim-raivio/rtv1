@@ -6,12 +6,12 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 17:08:59 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/23 20:42:41 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/25 13:47:40 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATH3D
-# define MATH3D
+#ifndef MATH3D_H
+# define MATH3D_H
 
 typedef struct s_vector
 {

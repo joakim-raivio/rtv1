@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 14:07:44 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/19 19:17:32 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/25 13:48:14 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ typedef struct s_object
 	t_vector		scale;
 	t_object_type	type;
 }	t_object;
-
 
 t_object		get_empty_object(void);
 void			set_object_location(t_vector location, void *object);
