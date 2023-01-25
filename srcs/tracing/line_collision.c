@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_luminosity.c                                   :+:      :+:    :+:   */
+/*   line_collision.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/23 01:10:17 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/25 13:16:33 by jraivio          ###   ########.fr       */
+/*   Created: 2023/01/25 12:44:43 by jraivio           #+#    #+#             */
+/*   Updated: 2023/01/25 13:32:20 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "light.h"
+#include "tracing.h"
 
-double	get_luminosity(t_hit hit)
+t_hit	line_collision(t_vector from, t_vector to)
 {
-	double	luminosity;
+	t_vector	direction;
+	double		length;
+	t_ray		ray;
 
-	luminosity = calculate_diffusion(hit);
-	return (luminosity);
+	direction = vec_normalize(vec_substract(to, from));
+	length = vec_length(vec_substract(from, to));
+	ray = create_ray(from, direction, 0, length);
+	return (trace_ray(ray));
 }

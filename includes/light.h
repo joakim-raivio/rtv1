@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 16:48:14 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/23 01:12:24 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/25 12:39:49 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ typedef struct s_light
 }	t_light;
 
 double	get_luminosity(t_hit hit);
+double	calculate_diffusion(t_hit hit);
 
 #endif
