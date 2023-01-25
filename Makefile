@@ -1,6 +1,5 @@
 NAME := rtv1
 CC := gcc
-DEBUGSRC := print.c mouse_inspect.c init_debug.c
 CORESRC := main.c init.c get_frame.c on_expose.c
 OBJECTSRC := get_rotation.c get_location.c get_forward_vector.c                 \
 	get_up_vector.c get_right_vector.c get_scale.c get_type.c                   \
@@ -24,8 +23,8 @@ INTERFACESRC := init_interface.c keys.c
 PARSESRC := parse.c add_object.c add_camera.c add_light.c add_shape.c           \
 	str_to_type.c
 FILES := $(CORESRC) $(CAMERASRC) $(SCENESRC) $(MATH3DSRC) $(RENDERSRC)          \
-	$(INTERFACESRC) $(PARSESRC) $(SHAPESRC) $(DEBUGSRC) $(TRACINGSRC)           \
-	$(LIGHTSRC) $(OBJECTSRC)
+	$(INTERFACESRC) $(PARSESRC) $(SHAPESRC) $(TRACINGSRC) $(LIGHTSRC)           \
+	$(OBJECTSRC)
 SRCSDIR := srcs
 SRCS = $(foreach SRC, $(FILES), $(shell find $(SRCSDIR) -name $(SRC)))
 OBJSDIR := objs
