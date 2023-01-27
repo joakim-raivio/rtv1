@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 20:57:10 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/23 23:39:41 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/27 18:11:20 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,25 @@
 static double	calc_a(t_ray ray, t_shape cylinder)
 {
 	return (vec_square(vec_substract(ray.direction,
-				vec_multiply(cylinder.object.up,
-					vec_dot(ray.direction, cylinder.object.up)))));
+				vec_multiply(cylinder.object.forward,
+					vec_dot(ray.direction, cylinder.object.forward)))));
 }
 
 static double	calc_b(t_vector location_delta, t_ray ray, t_shape cylinder)
 {
 	return (2 * vec_dot(vec_substract(ray.direction,
-				vec_multiply(cylinder.object.up,
-					vec_dot(ray.direction, cylinder.object.up))),
+				vec_multiply(cylinder.object.forward,
+					vec_dot(ray.direction, cylinder.object.forward))),
 			vec_substract(location_delta,
-				vec_multiply(cylinder.object.up,
-					vec_dot(location_delta, cylinder.object.up)))));
+				vec_multiply(cylinder.object.forward,
+					vec_dot(location_delta, cylinder.object.forward)))));
 }
 
 static double	calc_c(t_vector location_delta, t_shape cylinder)
 {
 	return (vec_square(vec_substract(location_delta,
-				vec_multiply(cylinder.object.up,
-					vec_dot(location_delta, cylinder.object.up))))
+				vec_multiply(cylinder.object.forward,
+					vec_dot(location_delta, cylinder.object.forward))))
 		- (cylinder.object.scale.x * cylinder.object.scale.x));
 }
 

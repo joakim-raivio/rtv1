@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 20:57:10 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/23 23:53:13 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/27 18:14:45 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,30 +17,30 @@
 static double	calc_a(double angle, t_ray ray, t_shape cone)
 {
 	return (cosh(angle) * vec_square(vec_substract(ray.direction,
-				vec_multiply(cone.object.up,
-					vec_dot(ray.direction, cone.object.up))))
-		- sinh(angle) * pow(vec_dot(ray.direction, cone.object.up), 2));
+				vec_multiply(cone.object.forward,
+					vec_dot(ray.direction, cone.object.forward))))
+		- sinh(angle) * pow(vec_dot(ray.direction, cone.object.forward), 2));
 }
 
 static double	calc_b(double angle, t_ray ray, t_shape cone,
 t_vector location_delta)
 {
 	return (2 * cosh(angle) * vec_dot(vec_substract(ray.direction,
-				vec_multiply(cone.object.up,
-					vec_dot(ray.direction, cone.object.up))),
+				vec_multiply(cone.object.forward,
+					vec_dot(ray.direction, cone.object.forward))),
 			vec_substract(location_delta,
-				vec_multiply(cone.object.up,
-					vec_dot(location_delta, cone.object.up))))
-		- 2 * sinh(angle) * vec_dot(ray.direction, cone.object.up)
-		* vec_dot(location_delta, cone.object.up));
+				vec_multiply(cone.object.forward,
+					vec_dot(location_delta, cone.object.forward))))
+		- 2 * sinh(angle) * vec_dot(ray.direction, cone.object.forward)
+		* vec_dot(location_delta, cone.object.forward));
 }
 
 static double	calc_c(double angle, t_shape cone, t_vector location_delta)
 {
 	return (cosh(angle) * vec_square(vec_substract(location_delta,
-				vec_multiply(cone.object.up,
-					vec_dot(location_delta, cone.object.up))))
-		- sinh(angle) * pow(vec_dot(location_delta, cone.object.up), 2));
+				vec_multiply(cone.object.forward,
+					vec_dot(location_delta, cone.object.forward))))
+		- sinh(angle) * pow(vec_dot(location_delta, cone.object.forward), 2));
 }
 
 t_intersect_result	intersect_cone(t_ray ray, t_shape cone)

@@ -6,11 +6,10 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:18:44 by jraivio           #+#    #+#             */
-/*   Updated: 2022/12/14 16:19:41 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/27 15:00:56 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rt.h"
 #include "rt_mlx.h"
 
 t_frame	*get_frame(void)
