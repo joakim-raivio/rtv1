@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 16:25:35 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/11 18:00:34 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/27 18:39:03 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,3 @@ t_quaternion	quat_product(t_quaternion r, t_quaternion s)
 		.z = r.w * s.z - r.y * s.x + r.x * s.y + r.z * s.w
 	});
 }
-
-/*
-Source:
-https://danceswithcode.net/engineeringnotes/quaternions/quaternions.html
-t0 = (r0s0 − r1s1 − r2s2 − r3s3)
-t1 = (r0s1 + r1s0 − r2s3 + r3s2)
-t2 = (r0s2 + r1s3 + r2s0 − r3s1)
-t3 = (r0s3 − r1s2 + r2s1 + r3s0)
-*/

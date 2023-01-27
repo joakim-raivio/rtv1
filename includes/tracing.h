@@ -6,13 +6,12 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 20:04:39 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/25 13:51:08 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/27 19:10:41 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TRACING_H
 # define TRACING_H
-# include "options.h"
 # include "object.h"
 # include "math3d.h"
 

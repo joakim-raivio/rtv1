@@ -6,14 +6,13 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:01:24 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/12 20:13:31 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/27 19:03:41 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RT_MLX_H
 # define RT_MLX_H
 # include <mlx.h>
-# include "options.h"
 
 typedef struct s_image
 {

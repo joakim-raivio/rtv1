@@ -6,13 +6,14 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 19:53:01 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/24 16:57:18 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/27 19:11:11 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "render.h"
 #include "camera.h"
 #include "tracing.h"
+#include "options.h"
 
 void	screenloop(void)
 {

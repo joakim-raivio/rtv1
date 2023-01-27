@@ -6,12 +6,11 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 14:52:25 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/24 16:39:50 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/01/27 18:35:39 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "math3d.h"
-#include <math.h>
 
 t_vector	vec_rotate(t_vector v, t_quaternion q)
 {
