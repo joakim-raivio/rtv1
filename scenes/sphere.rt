@@ -1,0 +1,6 @@
+#type,locX,locY,locZ,rotYaw,rotPitch,rotRoll
+#Shapes += scaleX,scaleY,scaleZ,colorRed,colorGreen,colorBlue,colorAlpha,brightness
+#Lights += intensity
+camera,0,0,-10,0,0,0
+light,100,100,-100,0,0,0,0.5
+sphere,0,0,0,0,0,0,1,1,1,1,0,0,1,1
