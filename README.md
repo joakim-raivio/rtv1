@@ -7,7 +7,7 @@ A simple version of a raytracer visualizer created with C and Minilibx for the 4
 ## Requirements:
 ### [Minilibx](https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html)
 ### MacOs
-#### Runs on linux with modifications
+Partly developed on Linux, but targeted to the schools Unix environment.
 
 ## Installation
 1. Install Minilibx to system libraries
