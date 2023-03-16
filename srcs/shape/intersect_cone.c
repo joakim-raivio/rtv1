@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 20:57:10 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/27 18:14:45 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/03/16 08:15:24 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ static double	calc_c(double angle, t_shape cone, t_vector location_delta)
 					vec_dot(location_delta, cone.object.forward))))
 		- sinh(angle) * pow(vec_dot(location_delta, cone.object.forward), 2));
 }
+
+/*
+ * Calculates the cone's intersections. Does not implement transform 
+ * normalization, and instead uses an arbitrary shape location.
+*/
 
 t_intersect_result	intersect_cone(t_ray ray, t_shape cone)
 {

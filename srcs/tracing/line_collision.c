@@ -6,11 +6,15 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 12:44:43 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/25 13:32:20 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/03/16 08:22:08 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tracing.h"
+
+/*
+ * Linetrace between two points.
+*/
 
 t_hit	line_collision(t_vector from, t_vector to)
 {

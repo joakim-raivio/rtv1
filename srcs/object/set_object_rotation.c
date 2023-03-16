@@ -6,12 +6,16 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 16:57:14 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/24 16:43:58 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/03/16 08:08:51 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "object.h"
 #include "math3d.h"
+
+/*
+ * Set objects rotation, and setup the direction vectors when rotating.
+*/
 
 void	set_object_rotation(t_quaternion rotation, void *object)
 {

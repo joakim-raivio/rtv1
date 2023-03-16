@@ -6,11 +6,15 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 17:02:29 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/24 16:20:57 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/03/16 08:00:35 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "math3d.h"
+
+/*
+ * Get the forward unit vector of a given quaternion.
+*/
 
 t_vector	get_quat_forward(t_quaternion quaternion)
 {

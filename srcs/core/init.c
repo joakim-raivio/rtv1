@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 13:46:04 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/25 13:49:15 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/03/16 07:54:55 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ void	init_getters(void)
 	ft_bzero(get_camera(), sizeof(t_object));
 	ft_bzero(get_scene(), sizeof(t_scene));
 }
+
+/*
+ * Initialize mlx's components and hooks here.
+*/
 
 void	init_mlx(void)
 {

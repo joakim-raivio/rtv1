@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 19:57:13 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/25 13:49:27 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/03/16 08:21:37 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 #include "options.h"
 #include "light.h"
 #include "libft.h"
+
+/*
+ * For a hit, get the final color to draw on the screen.
+*/
 
 unsigned int	get_hit_color(t_hit hit)
 {

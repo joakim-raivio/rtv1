@@ -6,11 +6,15 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 17:48:47 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/24 16:21:30 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/03/16 08:01:03 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "math3d.h"
+
+/*
+ * Get the upward unit vector of a given quaternion.
+*/
 
 t_vector	get_quat_up(t_quaternion quaternion)
 {

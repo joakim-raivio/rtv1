@@ -6,13 +6,17 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 21:45:18 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/24 17:16:16 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/03/16 08:20:33 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "math3d.h"
 #include "options.h"
 #include "camera.h"
+
+/*
+ * Naive implementation for getting an angle for a ray casted from the camera.
+*/
 
 t_vector	canvas_to_viewport(int x, int y)
 {

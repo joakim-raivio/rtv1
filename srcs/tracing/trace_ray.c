@@ -6,13 +6,18 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 20:04:19 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/24 17:18:22 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/03/16 08:22:58 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "math3d.h"
 #include "scene.h"
 #include "shape.h"
+
+/*
+ * For a given ray, check for intersections between all shapes, and return a hit
+ * with the closest one.
+*/
 
 t_hit	trace_ray(t_ray ray)
 {

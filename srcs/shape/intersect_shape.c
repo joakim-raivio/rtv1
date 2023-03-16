@@ -6,13 +6,19 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 20:50:43 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/24 17:12:05 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/03/16 08:19:21 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shape.h"
 #include "math3d.h"
 #include "tracing.h"
+
+/*
+ * Get a potentially applicable intersection result from the shape intersection
+ * functions return. 
+ * min < lowest of two results < max
+*/
 
 static double	parse_result(t_intersect_result result, double min, double max)
 {
@@ -30,6 +36,10 @@ static double	parse_result(t_intersect_result result, double min, double max)
 	}
 	return (closest);
 }
+
+/*
+ * For a ray, check intersections on a shape and return a hit if applicable.
+*/
 
 t_hit	intersect_shape(t_ray ray, t_shape *shape)
 {

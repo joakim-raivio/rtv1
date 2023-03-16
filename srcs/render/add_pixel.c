@@ -6,12 +6,16 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:04:28 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/27 19:09:44 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/03/16 08:12:04 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rt_mlx.h"
 #include "options.h"
+
+/*
+ * Set pixel color at x/y
+*/
 
 void	add_pixel(t_image *image, long x, long y, unsigned int color)
 {

@@ -6,12 +6,20 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 16:36:53 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/24 16:33:56 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/03/16 08:06:50 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "math3d.h"
 #include "math.h"
+
+/*
+ * Transform an euler angle to a quaternion. Uses right hand angles. 
+ * Rotations around the axii:
+ * X - Pitch
+ * Y - Yaw
+ * Z - Roll
+*/
 
 t_quaternion	rot_to_quat(t_rotation rotation)
 {

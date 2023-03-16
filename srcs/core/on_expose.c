@@ -6,11 +6,15 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 20:11:46 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/24 14:20:31 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/03/16 07:55:40 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rt_mlx.h"
+
+/*
+ * Handle redraw of a re-exposed window with this hook.
+*/
 
 int	on_expose(void *params)
 {

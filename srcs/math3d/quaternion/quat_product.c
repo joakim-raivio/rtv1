@@ -6,11 +6,15 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 16:25:35 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/27 18:39:03 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/03/16 08:02:34 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "math3d.h"
+
+/*
+ * Multiply two quaternions.
+*/
 
 t_quaternion	quat_product(t_quaternion r, t_quaternion s)
 {

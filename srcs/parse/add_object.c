@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 17:50:25 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/27 18:35:01 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/03/16 08:10:37 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 #include "parse_format.h"
 #include "libft.h"
 #include "parse.h"
+
+/*
+ * Common object information parsed in here.
+*/
 
 void	add_object(char **fields, void *object)
 {

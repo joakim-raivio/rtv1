@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 16:59:11 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/24 16:55:04 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/03/16 08:10:01 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 #include "libft.h"
 #include "parse_format.h"
 #include <fcntl.h>
+
+/*
+ * For each line read the first csv field for type and pass it to an applicable
+ * parsing function.
+*/
 
 void	parse_line(char *line)
 {
@@ -33,6 +38,10 @@ void	parse_line(char *line)
 		add_shape(fields);
 	ft_freearray(&fields, ft_countwords(line, ','));
 }
+
+/*
+ * Run through the file and pass each line to parse_line()
+*/
 
 void	parse(char *file)
 {

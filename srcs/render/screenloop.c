@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 19:53:01 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/27 19:11:11 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/03/16 08:13:43 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 #include "camera.h"
 #include "tracing.h"
 #include "options.h"
+
+/*
+ * Loops through each pixel, casting a ray from the camera and writing the 
+ * returned color into the mlx image.
+*/
 
 void	screenloop(void)
 {

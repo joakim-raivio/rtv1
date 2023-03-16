@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 20:57:10 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/27 18:11:20 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/03/16 08:16:00 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,11 @@ static double	calc_c(t_vector location_delta, t_shape cylinder)
 					vec_dot(location_delta, cylinder.object.forward))))
 		- (cylinder.object.scale.x * cylinder.object.scale.x));
 }
+
+/*
+ * Calculates the cylinder's intersections. Does not implement transform 
+ * normalization, and instead uses an arbitrary shape location.
+*/
 
 t_intersect_result	intersect_cylinder(t_ray ray, t_shape cylinder)
 {

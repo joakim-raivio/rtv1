@@ -6,7 +6,7 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 12:34:43 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/25 13:05:05 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/03/16 07:58:57 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 #include "scene.h"
 #include "options.h"
 #include "libft.h"
+
+/*
+ * Looping through all possible lights for the hit. Accumulate luminosity for
+ * each applicable source of light (not occluded). Clamp result between
+ * BACKGROUND_ILLUMINATION and 1.
+*/
 
 double	calculate_diffusion(t_hit hit)
 {

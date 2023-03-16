@@ -6,11 +6,15 @@
 /*   By: jraivio <jraivio@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 17:49:18 by jraivio           #+#    #+#             */
-/*   Updated: 2023/01/24 16:21:19 by jraivio          ###   ########.fr       */
+/*   Updated: 2023/03/16 08:00:51 by jraivio          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "math3d.h"
+
+/*
+ * Get the right unit vector of a given quaternion.
+*/
 
 t_vector	get_quat_right(t_quaternion quaternion)
 {
